@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable/ic_evhub.xml" value="0.1" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1545" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/activity_splash_screen.xml" value="0.151268115942029" />
+        <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/lgnbtn.xml" value="0.1" />
       </map>
     </option>
   </component>
