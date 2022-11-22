@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="feature_onboarding.Onboarding"
+            android:name="feature_onboarding.activities.OnboardingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false">
         </activity>

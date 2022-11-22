@@ -1,4 +1,4 @@
-package feature_onboarding
+package feature_onboarding.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

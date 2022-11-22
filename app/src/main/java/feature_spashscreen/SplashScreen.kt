@@ -5,9 +5,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
-import com.example.eventhub.MainActivity
 import com.example.eventhub.R
-import feature_onboarding.Onboarding
+import feature_onboarding.activities.OnboardingActivity
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
@@ -20,7 +19,7 @@ class SplashScreen : AppCompatActivity() {
         )
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, Onboarding::class.java)
+            val intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
             finish()
         }, 3000)
