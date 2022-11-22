@@ -18,5 +18,7 @@ class Onboarding : AppCompatActivity() {
             replace(R.id.frglgnreg, RegFrag)
             commit()
         }
+
+
     }
 }
