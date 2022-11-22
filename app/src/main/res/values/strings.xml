@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">EventHub</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="inregistreaza_te">Inregistreaza-te</string>
+    <string name="autentifica_te">Autentifica-te</string>
+    <string name="google">google</string>
+    <string name="apple">apple</string>
+    <string name="fb">fb</string>
+    <string name="email_address">Adresa de email</string>
+    <string name="password">Parola</string>
 </resources>

@@ -14,17 +14,22 @@
         android:theme="@style/Theme.EventHub"
         tools:targetApi="31">
         <activity
-            android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="true">
+            android:name="feature_homescreen.HomePage"
+            android:exported="false" />
+        <activity
+            android:name="feature_spashscreen.SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-
+        <activity
+            android:name="feature_onboarding.Onboarding"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="false">
         </activity>
     </application>
 

@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
+    tools:context="feature_spashscreen.SplashScreen">
 
     <ImageView
         android:id="@+id/SpashScreenImage"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:src="@drawable/eventhubss"
+        android:contentDescription="app icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

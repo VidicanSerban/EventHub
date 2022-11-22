@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context="feature_onboarding.RegisterFrag">
 
     <TextView
         android:id="@+id/reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inregistreaza-te"
+        android:text="@string/inregistreaza_te"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,74 +20,61 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05" />
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/user"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/regbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg">
+
+        <EditText
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:hint="Nume si prenume"
+            android:inputType="text"
+            />
+
+        <EditText
+            android:id="@+id/emailaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0sp"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email_address"
+            />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0sp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="@string/password" />
+        <EditText
+            android:id="@+id/passconfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0sp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Confirma parola" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
     <Button
         android:id="@+id/regbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INTRA IN CONT"
-        android:textSize="25dp"
+        android:text="CREEAZA CONT"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/reg" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="Ai deja cont?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/regbtnfrg1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/regbtnfrg1"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Intra in cont"
-        android:textColor="@color/black"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="539dp" />
-
-    <ImageButton
-        android:id="@+id/google"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="78dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/google"
-        app:layout_constraintBottom_toTopOf="@+id/regbtnfrg1"
-        app:layout_constraintEnd_toStartOf="@+id/fb"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regbtn" />
-
-    <ImageButton
-        android:id="@+id/apple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/apple"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/fb"
-        tools:layout_editor_absoluteY="437dp"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/fb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/facebook"
-        app:layout_constraintEnd_toStartOf="@+id/apple"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/google"
-        tools:layout_editor_absoluteY="437dp"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
