@@ -19,20 +19,20 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/tvAut"
+        android:id="@+id/tvAuthentication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:text="@string/autentifica_te"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/user"
+        app:layout_constraintBottom_toTopOf="@+id/llcUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivIcon"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnLog"
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="INTRA IN CONT"
@@ -45,17 +45,17 @@
         app:layout_constraintVertical_bias="0.547" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/user"
+        android:id="@+id/llcUser"
         android:layout_width="400sp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnLog"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivIcon">
         <EditText
-            android:id="@+id/etEmailAdd"
+            android:id="@+id/etEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="0sp"
@@ -64,7 +64,7 @@
             />
 
         <EditText
-            android:id="@+id/etPass"
+            android:id="@+id/etPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0sp"
@@ -76,10 +76,10 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
-        android:id="@+id/tvLog"
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ai deja cont?"
+        android:text="Inca nu ai cont?"
         app:layout_constraintBottom_toBottomOf="@+id/btnNavigateToRegistration"
         app:layout_constraintEnd_toStartOf="@+id/btnNavigateToRegistration"
         app:layout_constraintHorizontal_bias="0.5"
@@ -97,7 +97,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvLog"
+        app:layout_constraintStart_toEndOf="@+id/tvLogin"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

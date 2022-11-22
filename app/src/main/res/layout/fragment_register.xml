@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/user"
+        android:id="@+id/llcUser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -40,7 +40,7 @@
             />
 
         <EditText
-            android:id="@+id/etEmailAdd"
+            android:id="@+id/etEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="0sp"
@@ -49,7 +49,7 @@
             />
 
         <EditText
-            android:id="@+id/etPass"
+            android:id="@+id/etPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0sp"
@@ -57,7 +57,7 @@
             android:inputType="textPassword"
             android:hint="@string/password" />
         <EditText
-            android:id="@+id/etPassConfirm"
+            android:id="@+id/etPasswordConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0sp"
