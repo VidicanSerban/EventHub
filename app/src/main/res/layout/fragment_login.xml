@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="feature_onboarding.onboarding_fragments.LoginFrag">
+    tools:context="com.example.eventhub.feature_onboarding.onboarding_fragments.LoginFrag">
 
     <ImageView
         android:id="@+id/ivIcon"
@@ -33,9 +33,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
-        android:layout_width="366sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/tilPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
-            android:hint="@string/email_address" />
+            android:hint="@string/email_address"
+            android:paddingStart="10sp" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -54,17 +57,19 @@
         android:layout_width="20sp"
         android:layout_height="16sp"
         android:layout_marginEnd="20sp"
+        android:contentDescription="@string/email_address"
         android:src="@drawable/email"
         app:layout_constraintBottom_toBottomOf="@+id/tilEmail"
         app:layout_constraintEnd_toEndOf="@+id/tilEmail"
-        app:layout_constraintTop_toTopOf="@+id/tilEmail"
-        android:contentDescription="@string/email_address" />
+        app:layout_constraintTop_toTopOf="@+id/tilEmail" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
-        android:layout_width="366sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +79,9 @@
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
-            android:hint="@string/password" />
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="10sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,19 +89,22 @@
         android:layout_width="22sp"
         android:layout_height="12sp"
         android:layout_marginEnd="20sp"
+        android:contentDescription="@string/password"
         android:src="@drawable/password"
         app:layout_constraintBottom_toBottomOf="@+id/tilPassword"
         app:layout_constraintEnd_toEndOf="@+id/tilPassword"
-        app:layout_constraintTop_toTopOf="@+id/tilPassword"
-        android:contentDescription="@string/password" />
+        app:layout_constraintTop_toTopOf="@+id/tilPassword" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="64sp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="72dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_background"
         android:text="@string/intra_in_cont"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -105,25 +115,25 @@
         android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
         android:text="@string/inca_nu_ai_cont"
-        app:layout_constraintBottom_toBottomOf="@+id/btnNavigateToRegistration"
-        app:layout_constraintEnd_toStartOf="@+id/btnNavigateToRegistration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvLoginClicky"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnNavigateToRegistration" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnNavigateToRegistration"
-        style="@style/Widget.AppCompat.Button.Borderless"
+    <TextView
+        android:id="@+id/tvLoginClicky"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
         android:text="@string/inregistreaza_te"
         android:textColor="@color/button_background"
-        android:textSize="11sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvLogin"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toEndOf="@+id/tvLogin" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

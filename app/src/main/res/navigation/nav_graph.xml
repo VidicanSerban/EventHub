@@ -6,7 +6,7 @@
     app:startDestination="@id/registerFrag">
     <fragment
         android:id="@+id/registerFrag"
-        android:name="feature_onboarding.onboarding_fragments.RegisterFrag"
+        android:name="com.example.eventhub.feature_onboarding.onboarding_fragments.RegisterFrag"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -15,7 +15,11 @@
     </fragment>
     <fragment
         android:id="@+id/loginFrag"
-        android:name="feature_onboarding.onboarding_fragments.LoginFrag"
+        android:name="com.example.eventhub.feature_onboarding.onboarding_fragments.LoginFrag"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFrag_to_registerFrag"
+            app:destination="@id/registerFrag" />
+    </fragment>
 </navigation>

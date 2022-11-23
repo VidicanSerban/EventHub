@@ -1,4 +1,4 @@
-package feature_homescreen.homescreen_activities
+package com.example.eventhub.feature_homescreen.homescreen_activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

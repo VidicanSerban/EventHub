@@ -1,4 +1,4 @@
-package feature_onboarding.onboarding_activities
+package com.example.eventhub.feature_onboarding.onboarding_activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

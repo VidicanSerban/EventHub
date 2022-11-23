@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="feature_onboarding.onboarding_fragments.RegisterFrag">
+    tools:context="com.example.eventhub.feature_onboarding.onboarding_fragments.RegisterFrag">
 
     <TextView
         android:id="@+id/tvRegistration"
@@ -22,9 +22,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilName"
-        android:layout_width="366sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16sp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/tilEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
-            android:hint="@string/nume_si_prenume" />
+            android:hint="@string/nume_si_prenume"
+            android:paddingStart="10sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,17 +45,19 @@
         android:layout_width="20sp"
         android:layout_height="20sp"
         android:layout_marginEnd="20sp"
+        android:contentDescription="@string/nume_si_prenume"
         android:src="@drawable/user"
         app:layout_constraintBottom_toBottomOf="@+id/tilName"
         app:layout_constraintEnd_toEndOf="@+id/tilName"
-        app:layout_constraintTop_toTopOf="@+id/tilName"
-        android:contentDescription="@string/nume_si_prenume" />
+        app:layout_constraintTop_toTopOf="@+id/tilName" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
-        android:layout_width="366sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16sp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/tilPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +67,8 @@
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
-            android:hint="@string/email_address" />
+            android:hint="@string/email_address"
+            android:paddingStart="10sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,17 +76,19 @@
         android:layout_width="20sp"
         android:layout_height="16sp"
         android:layout_marginEnd="20sp"
+        android:contentDescription="@string/email_address"
         android:src="@drawable/email"
         app:layout_constraintBottom_toBottomOf="@+id/tilEmail"
         app:layout_constraintEnd_toEndOf="@+id/tilEmail"
-        app:layout_constraintTop_toTopOf="@+id/tilEmail"
-        android:contentDescription="@string/email_address" />
+        app:layout_constraintTop_toTopOf="@+id/tilEmail" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
-        android:layout_width="366sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16sp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/tilPasswordConfirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +98,9 @@
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
-            android:hint="@string/password" />
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="10sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,17 +108,19 @@
         android:layout_width="22sp"
         android:layout_height="12sp"
         android:layout_marginEnd="20sp"
+        android:contentDescription="@string/password"
         android:src="@drawable/password"
         app:layout_constraintBottom_toBottomOf="@+id/tilPassword"
         app:layout_constraintEnd_toEndOf="@+id/tilPassword"
-        app:layout_constraintTop_toTopOf="@+id/tilPassword"
-        android:contentDescription="@string/password" />
+        app:layout_constraintTop_toTopOf="@+id/tilPassword" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPasswordConfirm"
-        android:layout_width="366sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16sp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +130,9 @@
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
-            android:hint="@string/confirma_parola" />
+            android:hint="@string/confirma_parola"
+            android:inputType="textPassword"
+            android:paddingStart="10sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,19 +140,22 @@
         android:layout_width="22sp"
         android:layout_height="12sp"
         android:layout_marginEnd="20sp"
+        android:contentDescription="@string/confirma_parola"
         android:src="@drawable/password"
         app:layout_constraintBottom_toBottomOf="@+id/tilPasswordConfirm"
         app:layout_constraintEnd_toEndOf="@+id/tilPasswordConfirm"
-        app:layout_constraintTop_toTopOf="@+id/tilPasswordConfirm"
-        android:contentDescription="@string/confirma_parola" />
+        app:layout_constraintTop_toTopOf="@+id/tilPasswordConfirm" />
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="64sp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_background"
         android:text="@string/creeaza_cont"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,24 +165,26 @@
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ai_deja_cont"
-        app:layout_constraintBottom_toBottomOf="@+id/btnNavigateToLogin"
-        app:layout_constraintEnd_toStartOf="@+id/btnNavigateToLogin"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnNavigateToLogin" />
+        android:layout_marginBottom="43dp"
 
-    <Button
-        android:id="@+id/btnNavigateToLogin"
-        style="@style/Widget.AppCompat.Button.Borderless"
+
+        android:text="@string/ai_deja_cont"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvRegisterClicky"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRegisterClicky"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
         android:text="@string/autentifica_te"
         android:textColor="@color/button_background"
-        android:textSize="11sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvRegister"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toEndOf="@+id/tvRegister" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
