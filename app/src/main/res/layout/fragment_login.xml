@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="feature_onboarding.fragments.LoginFrag">
+    tools:context="feature_onboarding.onboarding_fragments.LoginFrag">
 
     <ImageView
         android:id="@+id/ivIcon"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_marginTop="80dp"
-        android:contentDescription="App logo"
+        android:contentDescription="@string/app_logo"
         android:src="@drawable/eventhubss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,60 +26,86 @@
         android:text="@string/autentifica_te"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/llcUser"
+        app:layout_constraintBottom_toTopOf="@+id/tilEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivIcon"
         tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmail"
+        android:layout_width="366sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tilPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuthentication">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="64sp"
+            android:background="@drawable/text_input_background"
+            android:hint="@string/email_address" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="20sp"
+        android:layout_height="16sp"
+        android:layout_marginEnd="20sp"
+        android:src="@drawable/email"
+        app:layout_constraintBottom_toBottomOf="@+id/tilEmail"
+        app:layout_constraintEnd_toEndOf="@+id/tilEmail"
+        app:layout_constraintTop_toTopOf="@+id/tilEmail"
+        android:contentDescription="@string/email_address" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        android:layout_width="366sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="64sp"
+            android:background="@drawable/text_input_background"
+            android:hint="@string/password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="22sp"
+        android:layout_height="12sp"
+        android:layout_marginEnd="20sp"
+        android:src="@drawable/password"
+        app:layout_constraintBottom_toBottomOf="@+id/tilPassword"
+        app:layout_constraintEnd_toEndOf="@+id/tilPassword"
+        app:layout_constraintTop_toTopOf="@+id/tilPassword"
+        android:contentDescription="@string/password" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INTRA IN CONT"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button_background"
+        android:text="@string/intra_in_cont"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivIcon"
-        app:layout_constraintVertical_bias="0.547" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/llcUser"
-        android:layout_width="400sp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivIcon">
-        <EditText
-            android:id="@+id/etEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0sp"
-            android:inputType="textEmailAddress"
-            android:hint="@string/email_address"
-            />
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0sp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="@string/password" />
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 
     <TextView
         android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inca nu ai cont?"
+        android:text="@string/inca_nu_ai_cont"
         app:layout_constraintBottom_toBottomOf="@+id/btnNavigateToRegistration"
         app:layout_constraintEnd_toStartOf="@+id/btnNavigateToRegistration"
         app:layout_constraintHorizontal_bias="0.5"
@@ -92,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/inregistreaza_te"
-        android:textColor="@color/black"
+        android:textColor="@color/button_background"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

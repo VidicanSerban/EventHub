@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="feature_onboarding.fragments.RegisterFrag">
+    tools:context="feature_onboarding.onboarding_fragments.RegisterFrag">
 
     <TextView
-        android:id="@+id/reg"
+        android:id="@+id/tvRegistration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/inregistreaza_te"
@@ -20,69 +20,135 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/llcUser"
-        android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilName"
+        android:layout_width="366sp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginTop="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tilEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRegistration">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="64sp"
+            android:background="@drawable/text_input_background"
+            android:hint="@string/nume_si_prenume" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="20sp"
+        android:layout_height="20sp"
+        android:layout_marginEnd="20sp"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="@+id/tilName"
+        app:layout_constraintEnd_toEndOf="@+id/tilName"
+        app:layout_constraintTop_toTopOf="@+id/tilName"
+        android:contentDescription="@string/nume_si_prenume" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmail"
+        android:layout_width="366sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tilPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="64sp"
+            android:background="@drawable/text_input_background"
+            android:hint="@string/email_address" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="20sp"
+        android:layout_height="16sp"
+        android:layout_marginEnd="20sp"
+        android:src="@drawable/email"
+        app:layout_constraintBottom_toBottomOf="@+id/tilEmail"
+        app:layout_constraintEnd_toEndOf="@+id/tilEmail"
+        app:layout_constraintTop_toTopOf="@+id/tilEmail"
+        android:contentDescription="@string/email_address" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        android:layout_width="366sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tilPasswordConfirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="64sp"
+            android:background="@drawable/text_input_background"
+            android:hint="@string/password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="22sp"
+        android:layout_height="12sp"
+        android:layout_marginEnd="20sp"
+        android:src="@drawable/password"
+        app:layout_constraintBottom_toBottomOf="@+id/tilPassword"
+        app:layout_constraintEnd_toEndOf="@+id/tilPassword"
+        app:layout_constraintTop_toTopOf="@+id/tilPassword"
+        android:contentDescription="@string/password" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPasswordConfirm"
+        android:layout_width="366sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg">
+        app:layout_constraintTop_toBottomOf="@id/tilPassword">
 
-        <EditText
-            android:id="@+id/etName"
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:hint="Nume si prenume"
-            android:inputType="text"
-            />
-
-        <EditText
-            android:id="@+id/etEmailAddress"
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0sp"
-            android:inputType="textEmailAddress"
-            android:hint="@string/email_address"
-            />
+            android:layout_height="64sp"
+            android:background="@drawable/text_input_background"
+            android:hint="@string/confirma_parola" />
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0sp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="@string/password" />
-        <EditText
-            android:id="@+id/etPasswordConfirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0sp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Confirma parola" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <ImageView
+        android:layout_width="22sp"
+        android:layout_height="12sp"
+        android:layout_marginEnd="20sp"
+        android:src="@drawable/password"
+        app:layout_constraintBottom_toBottomOf="@+id/tilPasswordConfirm"
+        app:layout_constraintEnd_toEndOf="@+id/tilPasswordConfirm"
+        app:layout_constraintTop_toTopOf="@+id/tilPasswordConfirm"
+        android:contentDescription="@string/confirma_parola" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CREEAZA CONT"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_background"
+        android:text="@string/creeaza_cont"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reg" />
+        app:layout_constraintTop_toBottomOf="@id/tilPasswordConfirm" />
 
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ai deja cont?"
+        android:text="@string/ai_deja_cont"
         app:layout_constraintBottom_toBottomOf="@+id/btnNavigateToLogin"
         app:layout_constraintEnd_toStartOf="@+id/btnNavigateToLogin"
         app:layout_constraintHorizontal_bias="0.5"
@@ -95,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/autentifica_te"
-        android:textColor="@color/black"
+        android:textColor="@color/button_background"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

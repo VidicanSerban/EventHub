@@ -4,15 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1285" />
+        <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable/button_background.xml" value="0.385" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable/ic_evhub.xml" value="0.1" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1545" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable/rectangle_1.xml" value="0.385" />
+        <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/drawable/text_input_background.xml" value="0.5305" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/activity_home_page.xml" value="0.3848958333333333" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/activity_onboarding.xml" value="0.22" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/activity_splash_screen.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/fragment_login.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/fragment_register.xml" value="0.22" />
+        <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/fragment_register.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/fragment_social_login.xml" value="0.4828125" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/lgnbtn.xml" value="0.1" />
         <entry key="..\:/Users/serban.vidican/AndroidStudioProjects/EventHub/app/src/main/res/layout/oboarding.xml" value="0.3848958333333333" />

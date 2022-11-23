@@ -1,4 +1,4 @@
-package feature_spashscreen
+package feature_spashscreen.splashscreen_activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import com.example.eventhub.R
-import feature_onboarding.activities.OnboardingActivity
+import feature_onboarding.onboarding_activities.OnboardingActivity
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
@@ -23,6 +23,5 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, 3000)
-
     }
 }

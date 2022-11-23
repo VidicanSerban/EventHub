@@ -8,4 +8,11 @@
     <string name="fb">fb</string>
     <string name="email_address">Adresa de email</string>
     <string name="password">Parola</string>
+    <string name="intra_in_cont">INTRA IN CONT</string>
+    <string name="creeaza_cont">CREEAZA CONT</string>
+    <string name="ai_deja_cont">Ai deja cont?</string>
+    <string name="confirma_parola">Confirma parola</string>
+    <string name="nume_si_prenume">Nume si prenume</string>
+    <string name="inca_nu_ai_cont">Inca nu ai cont?</string>
+    <string name="app_logo">App logo</string>
 </resources>

@@ -1,12 +1,12 @@
-package feature_homescreen
+package feature_onboarding.onboarding_activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.eventhub.R
 
-class HomePage : AppCompatActivity() {
+class OnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_page)
+        setContentView(R.layout.activity_onboarding)
     }
 }
