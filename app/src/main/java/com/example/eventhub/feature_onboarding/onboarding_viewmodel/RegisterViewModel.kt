@@ -1,11 +1,36 @@
 package com.example.eventhub.feature_onboarding.onboarding_viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.firebase.firestore.FirebaseFirestore
+import androidx.lifecycle.ViewModelProvider
+import com.example.eventhub.feature_onboarding.onboarding_data.userRepositoryImplementation
 
-class RegisterViewModel: ViewModel() {
+class RegisterViewModel(): ViewModel() {
 
-    private lateinit var firestore: FirebaseFirestore
+    private val emailLiveData = MutableLiveData<String>()
+    private val nameLiveData = MutableLiveData<String>()
+    private val passwordLiveData = MutableLiveData<String>()
+    private val passwordconfirmLiveData = MutableLiveData<String>()
 
-    //fun
+    private fun validateEmail(): Boolean{
+
+        return true
+    }
+    private fun validateName(): Boolean{
+
+        return true
+    }
+    private fun validatePassword(): Boolean{
+
+        return true
+    }
+    private fun samePassword(): Boolean{
+
+        return true
+    }
+
+    class RegisterViewModelFactory() : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            return RegisterViewModel() as T        }
+    }
 }
