@@ -15,4 +15,6 @@
     <string name="nume_si_prenume">Nume si prenume</string>
     <string name="inca_nu_ai_cont">Inca nu ai cont?</string>
     <string name="app_logo">App logo</string>
+    <string name="temperature">16°C</string>
+    <string name="oradea_romania">Oradea, Romania</string>
 </resources>

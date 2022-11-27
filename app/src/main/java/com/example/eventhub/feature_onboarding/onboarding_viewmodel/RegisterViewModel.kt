@@ -1,23 +1,27 @@
 package com.example.eventhub.feature_onboarding.onboarding_viewmodel
 
-import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
+import android.R.attr.password
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.eventhub.feature_onboarding.onboarding_data.userRepositoryImplementation
 import com.google.android.material.textfield.TextInputEditText
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 
 class RegisterViewModel(): ViewModel() {
 
     private fun validateEmail(email: TextInputEditText): Boolean{
-        
+        val EMAIL_ADDRESS_PATTERN = Pattern.compile(
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                    "\\@" +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                    "(" +
+                    "\\." +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                    ")+"
+        )
         var localemail = email.text.toString()
-        
-        if(localemail.isEmpty())
-        {
-            return false
-        }
-        return true
+        return EMAIL_ADDRESS_PATTERN.matcher(localemail).matches()
     }
     private fun validateName(name: TextInputEditText): Boolean{
         
@@ -25,43 +29,28 @@ class RegisterViewModel(): ViewModel() {
         
         if(localname.isEmpty())
         {
-            //Toast.makeText(applicationContext, "Please enter name", Toast.LENGTH_LONG).show()
             return false
         }
-        //else Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
         return true
     }
     private fun validatePassword(pass: TextInputEditText): Boolean{
-        
+        val PASSWORD_PATTERN = Pattern.compile(
+            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$")
         var password = pass.text.toString()
-        
-        if(password.isEmpty())
-        {
-            //oast.makeText(applicationContext, "Please enter password", Toast.LENGTH_LONG).show()
-            return false
-        }
-        //else Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
-        return true
+        return PASSWORD_PATTERN.matcher(password).matches()
     }
     private fun samePassword(pass: TextInputEditText, confirmpass: TextInputEditText): Boolean{
 
         var passconfirm = confirmpass.text.toString()
         var password = pass.text.toString()
-        
+
         if(passconfirm.isEmpty())
         {
-            //Toast.makeText(applicationContext, "Please enter password", Toast.LENGTH_LONG).show()
             return false
         }
-        else if(passconfirm.equals(password)){
-                    //Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
-                    return true
-                }
-                else
-                {
-                    //Toast.makeText(applicationContext, "Password does not match", Toast.LENGTH_SHORT).show()
-                    return false
-                }
+        else if(!passconfirm.equals(password)) return false
+
+        return true
     }
 
     class RegisterViewModelFactory() : ViewModelProvider.Factory {
