@@ -1,70 +1,67 @@
 package com.example.eventhub.feature_onboarding.onboarding_viewmodel
 
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.eventhub.feature_onboarding.onboarding_data.userRepositoryImplementation
+import com.google.android.material.textfield.TextInputEditText
 
 class RegisterViewModel(): ViewModel() {
 
-    private val emailLiveData = MutableLiveData<String>()
-    private val nameLiveData = MutableLiveData<String>()
-    private val passwordLiveData = MutableLiveData<String>()
-    private val passwordconfirmLiveData = MutableLiveData<String>()
-
-    private fun validateEmail(): Boolean{
+    private fun validateEmail(email: TextInputEditText): Boolean{
         
-        lateinit var email: String
+        var localemail = email.text.toString()
         
-        if(email.isEmpty())
+        if(localemail.isEmpty())
         {
-            Toast.makeText(applicationContext, "Please enter email address", Toast.LENGTH_LONG).show()
+            return false
         }
-        else Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
         return true
     }
-    private fun validateName(): Boolean{
+    private fun validateName(name: TextInputEditText): Boolean{
         
-        lateinit var name: String
+        var localname = name.text.toString()
         
-        if(name.isEmpty())
+        if(localname.isEmpty())
         {
-            Toast.makeText(applicationContext, "Please enter name", Toast.LENGTH_LONG).show()
+            //Toast.makeText(applicationContext, "Please enter name", Toast.LENGTH_LONG).show()
+            return false
         }
-        else Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
+        //else Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
         return true
     }
-    private fun validatePassword(): Boolean{
+    private fun validatePassword(pass: TextInputEditText): Boolean{
         
-        lateinit var password: String
+        var password = pass.text.toString()
         
         if(password.isEmpty())
         {
-            Toast.makeText(applicationContext, "Please enter password", Toast.LENGTH_LONG).show()
+            //oast.makeText(applicationContext, "Please enter password", Toast.LENGTH_LONG).show()
+            return false
         }
-        else Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
+        //else Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
         return true
     }
-    private fun samePassword(): Boolean{
+    private fun samePassword(pass: TextInputEditText, confirmpass: TextInputEditText): Boolean{
 
-        lateinit var passconfirm: String
-        lateinit var password: String
+        var passconfirm = confirmpass.text.toString()
+        var password = pass.text.toString()
         
         if(passconfirm.isEmpty())
         {
-            Toast.makeText(applicationContext, "Please enter password", Toast.LENGTH_LONG).show()
+            //Toast.makeText(applicationContext, "Please enter password", Toast.LENGTH_LONG).show()
             return false
         }
         else if(passconfirm.equals(password)){
-                    Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
                     return true
                 }
-                else 
+                else
                 {
-                    Toast.makeText(applicationContext, "Password does not match", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(applicationContext, "Password does not match", Toast.LENGTH_SHORT).show()
                     return false
                 }
-        return true
     }
 
     class RegisterViewModelFactory() : ViewModelProvider.Factory {
