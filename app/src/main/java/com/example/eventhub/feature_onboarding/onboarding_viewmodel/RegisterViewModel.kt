@@ -28,8 +28,7 @@ class RegisterViewModel(): ViewModel() {
         return PASSWORD_PATTERN.matcher(pass).matches()
     }
     fun samePassword(pass: String, confirmpass: String): Boolean{
-        if(confirmpass.isEmpty() || !confirmpass.equals(pass))
-        {
+        if(confirmpass.isEmpty() || !confirmpass.equals(pass)) {
             //error("Introduceti inca odata parola sau parolele nu corespund")
             return false
         }
@@ -40,5 +39,6 @@ class RegisterViewModel(): ViewModel() {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return RegisterViewModel() as T
             }
+
     }
 }
