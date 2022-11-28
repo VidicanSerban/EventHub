@@ -1,4 +1,6 @@
 package com.example.eventhub.commons
 
-class BaseFragment {
+import androidx.fragment.app.Fragment
+
+class BaseFragment: Fragment() {
 }

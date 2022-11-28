@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.example.eventhub.feature_onboarding.onboarding_fragments.RegisterFrag">
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHomeBar"
         android:layout_width="match_parent"
-        android:layout_height="232sp"
+        android:layout_height="wrap_content"
         android:background="@drawable/homebartop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +57,79 @@
             app:layout_constraintTop_toBottomOf="@id/tvDate"
             app:layout_constraintStart_toStartOf="@id/tvDate"/>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSearch"
+            android:layout_width="308sp"
+            android:layout_height="40sp"
+            android:layout_marginTop="18dp"
+            android:background="@color/homebarcolor2"
+            app:layout_constraintLeft_toLeftOf="@id/tvLocation"
+            app:layout_constraintTop_toBottomOf="@id/tvLocation">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:background="@color/homebarcolor2"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/search"
+            app:layout_constraintBottom_toBottomOf="@id/tilSearch"
+            app:layout_constraintLeft_toLeftOf="@id/tilSearch"
+            app:layout_constraintTop_toTopOf="@id/tilSearch" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29sp"
+            android:background="@drawable/filters"
+            app:layout_constraintLeft_toRightOf="@id/tilSearch"
+            app:layout_constraintBottom_toBottomOf="@id/tilSearch"
+            app:layout_constraintTop_toTopOf="@id/tilSearch"/>
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/clHomeBar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="155dp" />
+
+        <ScrollView
+            android:id="@+id/svTopTen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/rvHome"
+            app:layout_constraintStart_toStartOf="@id/rvHome"/>
+
+        <ScrollView
+            android:id="@+id/svPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/svTopTen"
+            app:layout_constraintStart_toStartOf="@id/svTopTen"/>
+
+        <ScrollView
+            android:id="@+id/svNearYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/svPopular"
+            app:layout_constraintStart_toStartOf="@id/svPopular"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

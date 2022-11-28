@@ -1,4 +1,6 @@
 package com.example.eventhub.commons
 
-class BaseActivity {
+import android.app.Activity
+
+class BaseActivity: Activity() {
 }

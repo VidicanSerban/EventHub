@@ -12,4 +12,6 @@
     <color name="btn_text_onboarding">#303030</color>
     <color name="home_top">#564FFD</color>
     <color name="homebarcolor">#A29EF0</color>
+    <color name="searchhint">#A29EF0</color>
+    <color name="homebarcolor2">#5D56F3</color>
 </resources>

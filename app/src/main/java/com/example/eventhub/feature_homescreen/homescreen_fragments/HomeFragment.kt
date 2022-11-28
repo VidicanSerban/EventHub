@@ -10,17 +10,12 @@ import com.example.eventhub.R
 import com.example.eventhub.feature_homescreen.homescreen_viewmodels.HomeFragmentViewModel
 
 class HomeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
-
     private lateinit var viewModel: HomeFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+        ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 

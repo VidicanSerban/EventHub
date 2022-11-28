@@ -10,19 +10,29 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
 import com.example.eventhub.feature_onboarding.onboarding_viewmodel.RegisterViewModel
+import com.google.android.material.textfield.TextInputEditText
 
 class RegisterFrag : Fragment(R.layout.fragment_register) {
 
     lateinit var loginBtn: TextView
     lateinit var registerBtn: Button
-    lateinit var viewModel: ViewModel
+    lateinit var viewModel: RegisterViewModel
+    lateinit var textName: TextInputEditText
+    lateinit var textEmail: TextInputEditText
+    lateinit var textPassword: TextInputEditText
+    lateinit var textConfirm: TextInputEditText
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loginBtn = view.findViewById(R.id.tvRegisterClicky)
         registerBtn = view.findViewById(R.id.btnRegister)
+        textName = view.findViewById(R.id.tiedName)
+        textEmail = view.findViewById(R.id.tiedEmail)
+        textPassword = view.findViewById(R.id.tiedPassword)
+        textConfirm = view.findViewById(R.id.tiedConfirm)
 
         initListeners()
+        initViewModel()
 
     }
     private fun initListeners()
@@ -32,9 +42,14 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
             findNavController().navigate(action)
         }
         registerBtn.setOnClickListener{
-            val action = RegisterFragDirections.actionRegisterFragToHomeFrag()
-            findNavController().navigate(action)
+            if(viewModel.validateName(textName.text.toString()) && viewModel.validateEmail(textEmail.text.toString()) && viewModel.validatePassword(textPassword.text.toString()) && viewModel.samePassword(textPassword.text.toString(), textConfirm.text.toString())){
+                val action = RegisterFragDirections.actionRegisterFragToHomeFrag()
+                findNavController().navigate(action)
+            }
+
+
         }
+
     }
     private fun initViewModel() {
         val viewModelFactory: RegisterViewModel.RegisterViewModelFactory =

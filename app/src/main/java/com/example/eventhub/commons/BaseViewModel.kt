@@ -1,4 +1,6 @@
 package com.example.eventhub.commons
 
-class BaseViewModel {
+import androidx.lifecycle.ViewModel
+
+class BaseViewModel: ViewModel() {
 }

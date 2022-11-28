@@ -17,4 +17,7 @@
     <string name="app_logo">App logo</string>
     <string name="temperature">16°C</string>
     <string name="oradea_romania">Oradea, Romania</string>
+    <string name="cauta_evenimente">Cauta evenimente</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
