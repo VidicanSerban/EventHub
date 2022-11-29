@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.eventhub.feature_homescreen.homescreen_activities.HomePage">
 
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_graph_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/nav_graph_home"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

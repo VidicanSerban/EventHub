@@ -62,17 +62,20 @@
             android:layout_width="308sp"
             android:layout_height="40sp"
             android:layout_marginTop="18dp"
-            android:background="@color/homebarcolor2"
+            android:background="@drawable/hometopbarinputtext"
             app:layout_constraintLeft_toLeftOf="@id/tvLocation"
             app:layout_constraintTop_toBottomOf="@id/tvLocation">
 
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="200sp"
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40sp"
-                android:background="@color/homebarcolor2"
-                />
+                android:hint="@string/cauta_evenimente"
+                android:textColorHint="@color/searchhint"
+                android:textColor="@color/searchhint"
+                android:background="@drawable/hometopbarinputtext"/>
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,6 +90,7 @@
             app:layout_constraintTop_toTopOf="@id/tilSearch" />
 
         <ImageView
+            android:id="@+id/ivFilters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="29sp"
@@ -94,6 +98,46 @@
             app:layout_constraintLeft_toRightOf="@id/tilSearch"
             app:layout_constraintBottom_toBottomOf="@id/tilSearch"
             app:layout_constraintTop_toTopOf="@id/tilSearch"/>
+
+        <Button
+            android:id="@+id/btnToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="23dp"
+            android:background="@drawable/home_button_1"
+            android:text="@string/astazi"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/clHomeBar"
+            app:layout_constraintStart_toStartOf="@id/tilSearch"
+            app:layout_constraintTop_toBottomOf="@id/tilSearch" />
+
+        <Button
+            android:id="@+id/btnTomorrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/home_button_2"
+            android:text="Maine"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/btnToday"
+            app:layout_constraintStart_toEndOf="@id/btnToday"
+            app:layout_constraintTop_toTopOf="@id/btnToday" />
+
+        <Button
+            android:id="@+id/btnThisWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/home_button_2"
+            android:text="Maine"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/btnToday"
+            app:layout_constraintStart_toEndOf="@id/btnToday"
+            app:layout_constraintTop_toTopOf="@id/btnToday" />
 
 
 

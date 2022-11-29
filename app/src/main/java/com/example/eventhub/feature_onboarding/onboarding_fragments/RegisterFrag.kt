@@ -1,26 +1,35 @@
 package com.example.eventhub.feature_onboarding.onboarding_fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
+import com.example.eventhub.feature_homescreen.homescreen_activities.HomePage
+import com.example.eventhub.feature_onboarding.onboarding_activities.OnboardingActivity
 import com.example.eventhub.feature_onboarding.onboarding_viewmodel.RegisterViewModel
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class RegisterFrag : Fragment(R.layout.fragment_register) {
 
-    lateinit var loginBtn: TextView
+    private lateinit var loginBtn: TextView
     lateinit var registerBtn: Button
     lateinit var viewModel: RegisterViewModel
     lateinit var textName: TextInputEditText
-    lateinit var textEmail: TextInputEditText
+    private lateinit var textEmail: TextInputEditText
     lateinit var textPassword: TextInputEditText
     lateinit var textConfirm: TextInputEditText
+    lateinit var errorName: TextInputLayout
+    private lateinit var errorEmail: TextInputLayout
+    private lateinit var errorPassword:TextInputLayout
+    lateinit var errorConfirm: TextInputLayout
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,6 +39,11 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
         textEmail = view.findViewById(R.id.tiedEmail)
         textPassword = view.findViewById(R.id.tiedPassword)
         textConfirm = view.findViewById(R.id.tiedConfirm)
+        errorName = view.findViewById(R.id.tilName)
+        errorEmail = view.findViewById(R.id.tilEmail)
+        errorPassword = view.findViewById(R.id.tilPassword)
+        errorConfirm = view.findViewById(R.id.tilPasswordConfirm)
+
 
         initListeners()
         initViewModel()
@@ -42,11 +56,74 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
             findNavController().navigate(action)
         }
         registerBtn.setOnClickListener{
-            if(viewModel.validateName(textName.text.toString()) && viewModel.validateEmail(textEmail.text.toString()) && viewModel.validatePassword(textPassword.text.toString()) && viewModel.samePassword(textPassword.text.toString(), textConfirm.text.toString())){
-                val action = RegisterFragDirections.actionRegisterFragToHomeFrag()
-                findNavController().navigate(action)
-            }
+            if(!viewModel.validateName(textName.text.toString()))
+            {
+                errorName.isErrorEnabled = true
+                errorName.error = getString(R.string.nameerror)
+                textName.setBackgroundResource(R.drawable.text_input_background_error)
+                textEmail.setBackgroundResource(R.drawable.text_input_background)
+                errorEmail.error = null
+                errorEmail.isErrorEnabled = false
+                textPassword.setBackgroundResource(R.drawable.text_input_background)
+                errorPassword.error = null
+                errorPassword.isErrorEnabled = false
+                textConfirm.setBackgroundResource(R.drawable.text_input_background)
+                errorConfirm.error = null
+                errorConfirm.isErrorEnabled = false
 
+            }
+            else if(!viewModel.validateEmail(textEmail.text.toString()))
+                    {
+                        textName.setBackgroundResource(R.drawable.text_input_background)
+                        errorName.error = null
+                        errorName.isErrorEnabled = false
+                        textName.clearFocus()
+                        textEmail.requestFocus()
+                        errorEmail.isErrorEnabled = true
+                        errorEmail.error = getString(R.string.emailerror)
+                        textEmail.setBackgroundResource(R.drawable.text_input_background_error)
+                        textPassword.setBackgroundResource(R.drawable.text_input_background)
+                        errorPassword.error = null
+                        errorPassword.isErrorEnabled = false
+                        textConfirm.setBackgroundResource(R.drawable.text_input_background)
+                        errorConfirm.error = null
+                        errorConfirm.isErrorEnabled = false
+                    }
+                    else if(!viewModel.validatePassword(textPassword.text.toString()))
+                            {
+                                textEmail.setBackgroundResource(R.drawable.text_input_background)
+                                errorEmail.error = null
+                                textEmail.clearFocus()
+                                textPassword.requestFocus()
+                                errorEmail.isErrorEnabled = false
+                                errorPassword.isErrorEnabled = true
+                                errorPassword.error = getString(R.string.passerror)
+                                textPassword.setBackgroundResource(R.drawable.text_input_background_error)
+                                textConfirm.setBackgroundResource(R.drawable.text_input_background)
+                                errorConfirm.error = null
+                                errorConfirm.isErrorEnabled = false
+                            }
+                            else if(!viewModel.samePassword(textPassword.text.toString(), textConfirm.text.toString()))
+                                    {
+                                        textPassword.setBackgroundResource(R.drawable.text_input_background)
+                                        errorPassword.error = null
+                                        textPassword.clearFocus()
+                                        textConfirm.requestFocus()
+                                        errorPassword.isErrorEnabled = false
+                                        errorConfirm.isErrorEnabled = true
+                                        errorConfirm.error = getString(R.string.confirmerror)
+                                        textConfirm.setBackgroundResource(R.drawable.text_input_background_error)
+                                    }
+                                    else
+                                        {
+                                            textConfirm.setBackgroundResource(R.drawable.text_input_background)
+                                            errorConfirm.error = null
+                                            errorConfirm.isErrorEnabled = false
+                                            textConfirm.clearFocus()
+                                            val intent = Intent (getActivity(), HomePage::class.java)
+                                            getActivity()?.startActivity(intent)
+                                            Toast.makeText(context, "Bine ati venit in EventHub", Toast.LENGTH_LONG).show()
+                                        }
 
         }
 

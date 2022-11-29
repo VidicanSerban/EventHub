@@ -14,4 +14,11 @@
     <color name="homebarcolor">#A29EF0</color>
     <color name="searchhint">#A29EF0</color>
     <color name="homebarcolor2">#5D56F3</color>
+    <color name="home_top_2">#302ABA</color>
+    <color name="input_background_focus">#4037D2</color>
+    <color name="error_border">#F0635A</color>
+    <color name="errorfill">#FDE8E9</color>
+    <color name="homebutton1">#29D697</color>
+    <color name="homebutton2">#F59762</color>
+    <color name="homebutton3">#F0635A</color>
 </resources>

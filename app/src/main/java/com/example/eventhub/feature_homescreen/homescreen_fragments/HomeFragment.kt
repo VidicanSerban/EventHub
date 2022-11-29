@@ -7,22 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.eventhub.R
-import com.example.eventhub.feature_homescreen.homescreen_viewmodels.HomeFragmentViewModel
+import com.example.eventhub.feature_homescreen.homescreen_viewmodel.HomeFragmentViewModel
 
-class HomeFragment : Fragment() {
-    private lateinit var viewModel: HomeFragmentViewModel
+class HomeFragment : Fragment(R.layout.fragment_home) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-        ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeFragmentViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }
