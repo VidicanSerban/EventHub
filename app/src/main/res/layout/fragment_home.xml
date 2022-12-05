@@ -149,23 +149,41 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/clHomeBar"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16sp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="155dp" />
+
+        <EditText
+            android:id="@+id/etTop10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_10_evenimente_in_aceasta_saptamana"
+            app:layout_constraintTop_toTopOf="@id/rvHome"
+            app:layout_constraintStart_toStartOf="@id/rvHome"/>
 
         <ScrollView
             android:id="@+id/svTopTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="@id/rvHome"
+            app:layout_constraintTop_toBottomOf="@id/etTop10"
             app:layout_constraintStart_toStartOf="@id/rvHome"/>
+
+    <EditText
+        android:id="@+id/etPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/evenimente_populare"
+        android:layout_marginTop="40sp"
+        app:layout_constraintTop_toBottomOf="@id/svTopTen"
+        app:layout_constraintStart_toStartOf="@id/rvHome"/>
 
         <ScrollView
             android:id="@+id/svPopular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/svTopTen"
+            app:layout_constraintTop_toBottomOf="@id/etPopular"
             app:layout_constraintStart_toStartOf="@id/svTopTen"/>
 
         <ScrollView

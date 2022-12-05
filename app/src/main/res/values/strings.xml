@@ -25,4 +25,6 @@
     <string name="passerror">Parola trebuie sa contina cel putin 8 caractere, o litera mare, una mica si un caracter special</string>
     <string name="confirmerror">Parola trebuie sa fie aceeasi</string>
     <string name="astazi">Astazi</string>
+    <string name="top_10_evenimente_in_aceasta_saptamana">Top 10 evenimente in aceasta saptamana</string>
+    <string name="evenimente_populare">Evenimente populare</string>
 </resources>
