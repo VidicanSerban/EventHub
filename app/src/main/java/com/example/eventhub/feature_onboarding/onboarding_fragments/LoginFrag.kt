@@ -16,8 +16,7 @@ class LoginFrag : Fragment(R.layout.fragment_login) {
         registerBtn = view.findViewById(R.id.tvLoginClicky)
 
         registerBtn.setOnClickListener{
-            val action =LoginFragDirections.actionLoginFragToRegisterFrag()
-            findNavController().navigate(action)
+            findNavController().popBackStack()
         }
     }
 

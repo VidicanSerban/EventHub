@@ -52,78 +52,77 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
     private fun initListeners()
     {
         loginBtn.setOnClickListener{
-            val action =RegisterFragDirections.actionRegisterFragToLoginFrag()
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.action_registerFrag_to_loginFrag)
         }
         registerBtn.setOnClickListener{
-            if(!viewModel.validateName(textName.text.toString()))
-            {
-                errorName.isErrorEnabled = true
-                errorName.error = getString(R.string.nameerror)
-                textName.setBackgroundResource(R.drawable.text_input_background_error)
-                textEmail.setBackgroundResource(R.drawable.text_input_background)
-                errorEmail.error = null
-                errorEmail.isErrorEnabled = false
-                textPassword.setBackgroundResource(R.drawable.text_input_background)
-                errorPassword.error = null
-                errorPassword.isErrorEnabled = false
-                textConfirm.setBackgroundResource(R.drawable.text_input_background)
-                errorConfirm.error = null
-                errorConfirm.isErrorEnabled = false
-
-            }
-            else if(!viewModel.validateEmail(textEmail.text.toString()))
-                    {
-                        textName.setBackgroundResource(R.drawable.text_input_background)
-                        errorName.error = null
-                        errorName.isErrorEnabled = false
-                        textName.clearFocus()
-                        textEmail.requestFocus()
-                        errorEmail.isErrorEnabled = true
-                        errorEmail.error = getString(R.string.emailerror)
-                        textEmail.setBackgroundResource(R.drawable.text_input_background_error)
-                        textPassword.setBackgroundResource(R.drawable.text_input_background)
-                        errorPassword.error = null
-                        errorPassword.isErrorEnabled = false
-                        textConfirm.setBackgroundResource(R.drawable.text_input_background)
-                        errorConfirm.error = null
-                        errorConfirm.isErrorEnabled = false
-                    }
-                    else if(!viewModel.validatePassword(textPassword.text.toString()))
-                            {
-                                textEmail.setBackgroundResource(R.drawable.text_input_background)
-                                errorEmail.error = null
-                                textEmail.clearFocus()
-                                textPassword.requestFocus()
-                                errorEmail.isErrorEnabled = false
-                                errorPassword.isErrorEnabled = true
-                                errorPassword.error = getString(R.string.passerror)
-                                textPassword.setBackgroundResource(R.drawable.text_input_background_error)
-                                textConfirm.setBackgroundResource(R.drawable.text_input_background)
-                                errorConfirm.error = null
-                                errorConfirm.isErrorEnabled = false
-                            }
-                            else if(!viewModel.samePassword(textPassword.text.toString(), textConfirm.text.toString()))
-                                    {
-                                        textPassword.setBackgroundResource(R.drawable.text_input_background)
-                                        errorPassword.error = null
-                                        textPassword.clearFocus()
-                                        textConfirm.requestFocus()
-                                        errorPassword.isErrorEnabled = false
-                                        errorConfirm.isErrorEnabled = true
-                                        errorConfirm.error = getString(R.string.confirmerror)
-                                        textConfirm.setBackgroundResource(R.drawable.text_input_background_error)
-                                    }
-                                    else
-                                        {
-                                            textConfirm.setBackgroundResource(R.drawable.text_input_background)
-                                            errorConfirm.error = null
-                                            errorConfirm.isErrorEnabled = false
-                                            textConfirm.clearFocus()
+//            if(!viewModel.validateName(textName.text.toString()))
+//            {
+//                errorName.isErrorEnabled = true
+//                errorName.error = getString(R.string.nameerror)
+//                textName.setBackgroundResource(R.drawable.text_input_background_error)
+//                textEmail.setBackgroundResource(R.drawable.text_input_background)
+//                errorEmail.error = null
+//                errorEmail.isErrorEnabled = false
+//                textPassword.setBackgroundResource(R.drawable.text_input_background)
+//                errorPassword.error = null
+//                errorPassword.isErrorEnabled = false
+//                textConfirm.setBackgroundResource(R.drawable.text_input_background)
+//                errorConfirm.error = null
+//                errorConfirm.isErrorEnabled = false
+//
+//            }
+//            else if(!viewModel.validateEmail(textEmail.text.toString()))
+//                    {
+//                        textName.setBackgroundResource(R.drawable.text_input_background)
+//                        errorName.error = null
+//                        errorName.isErrorEnabled = false
+//                        textName.clearFocus()
+//                        textEmail.requestFocus()
+//                        errorEmail.isErrorEnabled = true
+//                        errorEmail.error = getString(R.string.emailerror)
+//                        textEmail.setBackgroundResource(R.drawable.text_input_background_error)
+//                        textPassword.setBackgroundResource(R.drawable.text_input_background)
+//                        errorPassword.error = null
+//                        errorPassword.isErrorEnabled = false
+//                        textConfirm.setBackgroundResource(R.drawable.text_input_background)
+//                        errorConfirm.error = null
+//                        errorConfirm.isErrorEnabled = false
+//                    }
+//                    else if(!viewModel.validatePassword(textPassword.text.toString()))
+//                            {
+//                                textEmail.setBackgroundResource(R.drawable.text_input_background)
+//                                errorEmail.error = null
+//                                textEmail.clearFocus()
+//                                textPassword.requestFocus()
+//                                errorEmail.isErrorEnabled = false
+//                                errorPassword.isErrorEnabled = true
+//                                errorPassword.error = getString(R.string.passerror)
+//                                textPassword.setBackgroundResource(R.drawable.text_input_background_error)
+//                                textConfirm.setBackgroundResource(R.drawable.text_input_background)
+//                                errorConfirm.error = null
+//                                errorConfirm.isErrorEnabled = false
+//                            }
+//                            else if(!viewModel.samePassword(textPassword.text.toString(), textConfirm.text.toString()))
+//                                    {
+//                                        textPassword.setBackgroundResource(R.drawable.text_input_background)
+//                                        errorPassword.error = null
+//                                        textPassword.clearFocus()
+//                                        textConfirm.requestFocus()
+//                                        errorPassword.isErrorEnabled = false
+//                                        errorConfirm.isErrorEnabled = true
+//                                        errorConfirm.error = getString(R.string.confirmerror)
+//                                        textConfirm.setBackgroundResource(R.drawable.text_input_background_error)
+//                                    }
+//                                    else
+//                                        {
+//                                            textConfirm.setBackgroundResource(R.drawable.text_input_background)
+//                                            errorConfirm.error = null
+//                                            errorConfirm.isErrorEnabled = false
+//                                            textConfirm.clearFocus()
                                             val intent = Intent (getActivity(), HomePage::class.java)
                                             getActivity()?.startActivity(intent)
                                             Toast.makeText(context, "Bine ati venit in EventHub", Toast.LENGTH_LONG).show()
-                                        }
+                                        //}
 
         }
 

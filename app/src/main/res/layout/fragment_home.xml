@@ -93,7 +93,7 @@
             android:id="@+id/ivFilters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="29sp"
+            android:layout_marginStart="29sp"
             android:background="@drawable/filters"
             app:layout_constraintLeft_toRightOf="@id/tilSearch"
             app:layout_constraintBottom_toBottomOf="@id/tilSearch"
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:background="@drawable/home_button_2"
-            android:text="Maine"
+            android:text="@string/maine"
             android:textColor="@color/white"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="@id/btnToday"
@@ -131,67 +131,93 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:background="@drawable/home_button_2"
-            android:text="Maine"
+            android:background="@drawable/home_button_3"
+            android:text="@string/saptamana_aceasta"
             android:textColor="@color/white"
             android:textSize="11sp"
+            android:paddingLeft="21sp"
+            android:paddingRight="21sp"
             app:layout_constraintBottom_toBottomOf="@id/btnToday"
-            app:layout_constraintStart_toEndOf="@id/btnToday"
-            app:layout_constraintTop_toTopOf="@id/btnToday" />
+            app:layout_constraintStart_toEndOf="@id/btnTomorrow"
+            app:layout_constraintTop_toTopOf="@id/btnToday"
+            app:layout_constraintEnd_toEndOf="@id/ivFilters"/>
 
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHome"
+    <ScrollView
+        android:id="@+id/svHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/clHomeBar"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16sp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="155dp" />
 
-        <EditText
-            android:id="@+id/etTop10"
+        <TextView
+            android:id="@+id/tvTop10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/top_10_evenimente_in_aceasta_saptamana"
-            app:layout_constraintTop_toTopOf="@id/rvHome"
-            app:layout_constraintStart_toStartOf="@id/rvHome"/>
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/svHome"
+            app:layout_constraintStart_toStartOf="@id/svHome"/>
 
-        <ScrollView
-            android:id="@+id/svTopTen"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/etTop10"
-            app:layout_constraintStart_toStartOf="@id/rvHome"/>
+            android:background="@drawable/top10"
+            app:layout_constraintTop_toBottomOf="@id/tvTop10"
+            app:layout_constraintStart_toStartOf="@id/svHome"/>
 
-    <EditText
-        android:id="@+id/etPopular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/evenimente_populare"
-        android:layout_marginTop="40sp"
-        app:layout_constraintTop_toBottomOf="@id/svTopTen"
-        app:layout_constraintStart_toStartOf="@id/rvHome"/>
+        <TextView
+            android:id="@+id/tvPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/evenimente_populare"
+            android:textSize="18sp"
+            android:layout_marginTop="40sp"
+            app:layout_constraintTop_toBottomOf="@id/rvTopTen"
+            app:layout_constraintStart_toStartOf="@id/svHome"/>
 
-        <ScrollView
-            android:id="@+id/svPopular"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/etPopular"
-            app:layout_constraintStart_toStartOf="@id/svTopTen"/>
+            android:background="@drawable/popular"
+            app:layout_constraintTop_toBottomOf="@id/tvPopular"
+            app:layout_constraintStart_toStartOf="@id/rvTopTen"/>
 
-        <ScrollView
-            android:id="@+id/svNearYou"
+        <TextView
+            android:id="@+id/tvNearYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/evenimente_aproape_de_tine"
+            app:layout_constraintTop_toBottomOf="@id/rvPopular"
+            app:layout_constraintStart_toStartOf="@id/rvPopular"
+            android:layout_marginTop="43sp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNearYou"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/svPopular"
-            app:layout_constraintStart_toStartOf="@id/svPopular"/>
+            android:background="@drawable/near_you"
+            app:layout_constraintTop_toBottomOf="@id/tvNearYou"
+            app:layout_constraintStart_toStartOf="@id/tvNearYou"/>
+
+    />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
