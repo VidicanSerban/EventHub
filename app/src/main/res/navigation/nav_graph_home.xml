@@ -3,41 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_home"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
-        <action
-            android:id="@+id/action_searchFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment2"
+        android:id="@+id/homeFragment"
         android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.HomeFragment"
         android:label="HomeFragment" >
         <action
-            android:id="@+id/action_homeFragment2_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_homeFragment2_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_homeFragment_to_organizeEventFrag"
+            app:destination="@id/organizeEventFrag" />
     </fragment>
+    <fragment
+        android:id="@+id/organizeEventFrag"
+        android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.OrganizeEventFrag"
+        android:label="fragment_organize_event"
+        tools:layout="@layout/fragment_organize_event" />
 </navigation>

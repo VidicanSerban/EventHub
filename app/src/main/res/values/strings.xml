@@ -32,4 +32,7 @@
     <string name="search">Cauta</string>
     <string name="eveniment_recomandat">Eveniment recomandat</string>
     <string name="evenimente_aproape_de_tine">Evenimente aproape de tine</string>
+    <string name="nu_ai_gasit_ceva_pe_placul_tau">Nu ai gasit ceva pe
+placul tau?</string>
+    <string name="organizeaza_un_eveniment">Organizeaza un eveniment</string>
 </resources>
