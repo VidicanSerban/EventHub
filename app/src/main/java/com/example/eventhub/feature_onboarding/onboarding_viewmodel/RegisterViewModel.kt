@@ -33,6 +33,7 @@ class RegisterViewModel(): ViewModel() {
     fun validateEmail(email: String): Boolean{
         return EMAIL_ADDRESS.matcher(email).matches()
     }
+
     fun validatePassword(pass: String): Boolean{
         val PASSWORD_PATTERN = Pattern.compile(
             "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@\$%^&*-]).{8,}\$")

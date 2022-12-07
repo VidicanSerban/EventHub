@@ -1,3 +1,3 @@
 package com.example.eventhub.feature_onboarding.onboarding_data
 
-data class User(val name: String = "", val email: String = "")
+data class User(val email: String = "", val password: String = "")

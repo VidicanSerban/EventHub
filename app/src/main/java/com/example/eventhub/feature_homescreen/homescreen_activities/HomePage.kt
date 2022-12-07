@@ -12,6 +12,7 @@ import com.example.eventhub.R.id.bottom_nav_view
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomePage : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
@@ -21,9 +22,8 @@ class HomePage : AppCompatActivity() {
         val bottomNavigationView: BottomNavigationView = findViewById(bottom_nav_view)
         bottomNavigationView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener{
-            _, destination, _ -> if(destination.id == R.id.clCreateEventFrag){
+            _, destination, _ -> if(destination.id == R.id.organizeEventFrag){
             bottomNav.visibility = View.GONE
-            Log.d("HomePage", "Bottom Nav View is invisible")
         }
             else {
                 bottomNav.visibility = View.VISIBLE
@@ -31,5 +31,7 @@ class HomePage : AppCompatActivity() {
         }
 
     }
+
+
 
 }

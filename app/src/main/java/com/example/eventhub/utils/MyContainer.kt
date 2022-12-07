@@ -9,6 +9,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
 class MyContainer {
+
     val firebase = Firebase.firestore
 
     val fireauth = FirebaseAuth.getInstance()

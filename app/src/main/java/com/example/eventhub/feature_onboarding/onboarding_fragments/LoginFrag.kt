@@ -8,7 +8,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
 
 class LoginFrag : Fragment(R.layout.fragment_login) {
-
     lateinit var registerBtn: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -6,8 +6,7 @@ import com.example.eventhub.feature_onboarding.onboarding_data.UserRepositoryImp
 
 class OnboardingViewModel(userRepositoryImplementation: UserRepositoryImpl): ViewModel() {
 
-    class OnboardingViewModelFactory(
-        private val userRepositoryImplementation: UserRepositoryImpl
+    class OnboardingViewModelFactory(private val userRepositoryImplementation: UserRepositoryImpl
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return OnboardingViewModel(userRepositoryImplementation) as T        }

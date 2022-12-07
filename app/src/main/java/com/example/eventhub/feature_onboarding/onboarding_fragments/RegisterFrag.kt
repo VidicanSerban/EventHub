@@ -18,7 +18,6 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class RegisterFrag : Fragment(R.layout.fragment_register) {
-
     private lateinit var loginBtn: TextView
     lateinit var registerBtn: Button
     lateinit var viewModel: RegisterViewModel

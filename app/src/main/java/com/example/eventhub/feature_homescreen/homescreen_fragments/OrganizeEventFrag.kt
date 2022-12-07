@@ -13,6 +13,7 @@ import com.example.eventhub.feature_homescreen.homescreen_viewmodel.HomeFragment
 import com.example.eventhub.feature_homescreen.homescreen_viewmodel.OrganizeEventViewModel
 
 class OrganizeEventFrag : Fragment(R.layout.fragment_organize_event) {
+
     private lateinit var viewModel: OrganizeEventViewModel
     private lateinit var backButton:ImageButton
 

@@ -10,6 +10,7 @@ import com.example.eventhub.R
 import com.example.eventhub.feature_onboarding.onboarding_fragments.LoginFragDirections
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

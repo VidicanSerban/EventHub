@@ -209,7 +209,7 @@
                 android:text="@string/evenimente_aproape_de_tine"
                 app:layout_constraintTop_toBottomOf="@id/rvPopular"
                 app:layout_constraintStart_toStartOf="@id/rvPopular"
-                android:layout_marginTop="43dp"
+                android:layout_marginTop="43sp"
                 />
 
             <androidx.recyclerview.widget.RecyclerView

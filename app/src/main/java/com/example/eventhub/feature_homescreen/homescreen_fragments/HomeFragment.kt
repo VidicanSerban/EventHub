@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
+
     lateinit var viewModel: HomeFragmentViewModel
     lateinit var eventCreate: ImageButton
     lateinit var dateText: TextView
