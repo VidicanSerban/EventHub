@@ -1,13 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clCreateEventFrag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".feature_homescreen.homescreen_fragments.OrganizeEventFrag">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is the organize events page" />
 
-</FrameLayout>
+
+    <ImageButton
+        android:id="@+id/ibBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintRight_toLeftOf="@id/tvYourEvent"
+        app:layout_constraintTop_toTopOf="@id/tvYourEvent"
+        app:layout_constraintBottom_toBottomOf="@id/tvYourEvent"
+        android:background="@drawable/youreventbackbutton"
+        android:src="@drawable/x"
+        android:layout_marginEnd="54dp"
+        />
+    <TextView
+        android:id="@+id/tvYourEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/evenimentul_tau"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <ImageView
+        android:id="@+id/ivCoperta"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        app:layout_constraintTop_toBottomOf="@id/tvYourEvent"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTitle"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_input_background"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/ivCoperta">
+
+        <EditText
+            android:id="@+id/etEventName"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginStart="16dp"
+            android:hint="@string/nume_event"
+            android:textColorHint="@color/input_background"
+            android:background="@android:color/transparent"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/ivEventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/eventname"
+        app:layout_constraintRight_toRightOf="@id/tilTitle"
+        app:layout_constraintTop_toTopOf="@id/tilTitle"
+        app:layout_constraintBottom_toBottomOf="@id/tilTitle"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDate"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/text_input_background"
+        app:layout_constraintTop_toBottomOf="@id/tilTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp">
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Data evenimentului"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            />
+        
+    </com.google.android.material.textfield.TextInputLayout>
+    
+    <ImageView
+        android:id="@+id/ivDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/date"
+        app:layout_constraintRight_toRightOf="@id/tilDate"
+        app:layout_constraintTop_toTopOf="@id/tilDate"
+        app:layout_constraintBottom_toBottomOf="@id/tilDate"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTime"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/text_input_background"
+        app:layout_constraintTop_toBottomOf="@id/tilDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp">
+
+        <EditText
+            android:id="@+id/etTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Ora eveniment"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/ivTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/time"
+        app:layout_constraintRight_toRightOf="@id/tilTime"
+        app:layout_constraintTop_toTopOf="@id/tilTime"
+        app:layout_constraintBottom_toBottomOf="@id/tilTime"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLocation"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/text_input_background"
+        app:layout_constraintTop_toBottomOf="@id/tilTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp">
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/oradea_romania"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/ivLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/location"
+        app:layout_constraintRight_toRightOf="@id/tilLocation"
+        app:layout_constraintTop_toTopOf="@id/tilLocation"
+        app:layout_constraintBottom_toBottomOf="@id/tilLocation"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
