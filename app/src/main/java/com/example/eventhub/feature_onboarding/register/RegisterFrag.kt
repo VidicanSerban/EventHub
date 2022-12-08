@@ -117,7 +117,6 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
 //                                            textConfirm.clearFocus()
                                             val intent = Intent (getActivity(), HomePage::class.java)
                                             getActivity()?.startActivity(intent)
-                                            Toast.makeText(context, "Bine ati venit in EventHub", Toast.LENGTH_LONG).show()
                                         //}
 
         }
