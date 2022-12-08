@@ -1,4 +1,4 @@
-package com.example.eventhub.feature_onboarding.onboarding_fragments
+package com.example.eventhub.feature_onboarding.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

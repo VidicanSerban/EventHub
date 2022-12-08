@@ -14,11 +14,11 @@
         android:theme="@style/Theme.EventHub"
         tools:targetApi="31">
         <activity
-            android:name="com.example.eventhub.feature_homescreen.homescreen_activities.HomePage"
+            android:name="com.example.eventhub.feature_homescreen.activity.HomePage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
-            android:name="com.example.eventhub.feature_spashscreen.splashscreen_activities.SplashScreen"
+            android:name="com.example.eventhub.feature_spashscreen.activity.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.eventhub.feature_onboarding.onboarding_activities.OnboardingActivity"
+            android:name="com.example.eventhub.feature_onboarding.activity.OnboardingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false">
         </activity>

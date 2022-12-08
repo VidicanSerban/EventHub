@@ -1,16 +1,12 @@
-package com.example.eventhub.feature_homescreen.homescreen_fragments
+package com.example.eventhub.feature_homescreen.organizeevent
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
-import com.example.eventhub.feature_homescreen.homescreen_viewmodel.HomeFragmentViewModel
-import com.example.eventhub.feature_homescreen.homescreen_viewmodel.OrganizeEventViewModel
 
 class OrganizeEventFrag : Fragment(R.layout.fragment_organize_event) {
 

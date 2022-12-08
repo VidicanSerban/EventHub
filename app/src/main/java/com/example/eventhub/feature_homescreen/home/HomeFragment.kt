@@ -1,8 +1,7 @@
-package com.example.eventhub.feature_homescreen.homescreen_fragments
+package com.example.eventhub.feature_homescreen.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.format.DateFormat.format
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
@@ -10,9 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
-import com.example.eventhub.feature_homescreen.homescreen_viewmodel.HomeFragmentViewModel
-import com.google.type.Date
-import java.lang.String.format
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Calendar

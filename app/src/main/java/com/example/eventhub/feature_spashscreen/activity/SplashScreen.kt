@@ -1,4 +1,4 @@
-package com.example.eventhub.feature_spashscreen.splashscreen_activities
+package com.example.eventhub.feature_spashscreen.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import com.example.eventhub.R
-import com.example.eventhub.feature_onboarding.onboarding_activities.OnboardingActivity
+import com.example.eventhub.feature_onboarding.activity.OnboardingActivity
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {

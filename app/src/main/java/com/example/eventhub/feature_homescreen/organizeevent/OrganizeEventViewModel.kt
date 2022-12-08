@@ -1,4 +1,4 @@
-package com.example.eventhub.feature_homescreen.homescreen_viewmodel
+package com.example.eventhub.feature_homescreen.organizeevent
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

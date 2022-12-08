@@ -1,8 +1,7 @@
-package com.example.eventhub.feature_homescreen.homescreen_viewmodel
+package com.example.eventhub.feature_homescreen.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.eventhub.feature_onboarding.onboarding_viewmodel.RegisterViewModel
 
 class HomeFragmentViewModel : ViewModel() {
 

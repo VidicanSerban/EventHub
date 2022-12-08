@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.SearchFragment"
+        android:name="com.example.eventhub.feature_homescreen.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.ProfileFragment"
+        android:name="com.example.eventhub.feature_homescreen.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.HomeFragment"
+        android:name="com.example.eventhub.feature_homescreen.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_organizeEventFrag"
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/organizeEventFrag"
-        android:name="com.example.eventhub.feature_homescreen.homescreen_fragments.OrganizeEventFrag"
+        android:name="com.example.eventhub.feature_homescreen.organizeevent.OrganizeEventFrag"
         android:label="fragment_organize_event"
         tools:layout="@layout/fragment_organize_event" />
 </navigation>

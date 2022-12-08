@@ -6,7 +6,7 @@
     android:id="@+id/svOrganizeEvent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature_homescreen.homescreen_fragments.OrganizeEventFrag">
+    tools:context=".feature_homescreen.organizeevent.OrganizeEventFrag">
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

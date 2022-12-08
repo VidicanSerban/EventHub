@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.eventhub.feature_onboarding.onboarding_fragments.LoginFrag">
+    tools:context="com.example.eventhub.feature_onboarding.login.LoginFrag">
 
     <ImageView
         android:id="@+id/ivIcon"

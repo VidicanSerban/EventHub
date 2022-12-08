@@ -1,4 +1,4 @@
-package com.example.eventhub.feature_onboarding.onboarding_data
+package com.example.eventhub.feature_onboarding.data
 
 class UserRepositoryImpl : UserRepository {
     

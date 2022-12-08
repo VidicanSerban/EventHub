@@ -1,8 +1,8 @@
-package com.example.eventhub.feature_onboarding.onboarding_viewmodel
+package com.example.eventhub.feature_onboarding.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.eventhub.feature_onboarding.onboarding_data.UserRepositoryImpl
+import com.example.eventhub.feature_onboarding.data.UserRepositoryImpl
 
 class OnboardingViewModel(userRepositoryImplementation: UserRepositoryImpl): ViewModel() {
 

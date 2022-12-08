@@ -1,13 +1,9 @@
-package com.example.eventhub.feature_onboarding.onboarding_viewmodel
+package com.example.eventhub.feature_onboarding.register
 
-import android.util.Log
 import android.util.Patterns.EMAIL_ADDRESS
 import androidx.constraintlayout.motion.utils.ViewState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.eventhub.feature_onboarding.onboarding_data.UserRepositoryImpl
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import java.util.regex.Pattern

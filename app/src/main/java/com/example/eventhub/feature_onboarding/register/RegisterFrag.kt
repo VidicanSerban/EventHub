@@ -1,4 +1,4 @@
-package com.example.eventhub.feature_onboarding.onboarding_fragments
+package com.example.eventhub.feature_onboarding.register
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
-import com.example.eventhub.feature_homescreen.homescreen_activities.HomePage
-import com.example.eventhub.feature_onboarding.onboarding_activities.OnboardingActivity
-import com.example.eventhub.feature_onboarding.onboarding_viewmodel.RegisterViewModel
+import com.example.eventhub.feature_homescreen.activity.HomePage
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 

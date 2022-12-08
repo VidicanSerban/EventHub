@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.example.eventhub.feature_onboarding.onboarding_fragments.RegisterFrag">
+    tools:context="com.example.eventhub.feature_onboarding.register.RegisterFrag">
 
     <TextView
         android:id="@+id/tvRegistration"
