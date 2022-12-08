@@ -38,4 +38,13 @@ placul tau?</string>
     <string name="evenimentul_tau">Evenimentul tau</string>
     <string name="nume_event">Nume event</string>
     <string name="ora_eveniment">Ora eveniment</string>
+    <string name="continua">Continua</string>
+    <string name="data_evenimentului">Data evenimentului</string>
+    <string name="descrie_eveniment">Descrie eveniment</string>
+    <string name="vincent_van_gogh_o_experien_imersiv">Vincent Van Gogh:
+  O experiență imersivă</string>
+    <string name="depeche_mode_n_bucure_ti_memento_mori_tour">Depeche Mode în București -
+ Memento Mori Tour</string>
+    <string name="_2_5k_participanti">2.5k Participanti</string>
+    <string name="curs_de_gastronomie_cooking_around_the_world">Curs de gastronomie: Cooking Around The World</string>
 </resources>

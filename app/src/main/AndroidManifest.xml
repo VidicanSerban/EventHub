@@ -20,7 +20,7 @@
         <activity
             android:name="com.example.eventhub.feature_spashscreen.activity.SplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/input_background">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="366dp"
+        android:layout_height="379dp"
+        android:background="@drawable/recommended"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivCardRecommended"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/radius_cards"
+            android:src="@drawable/eventhubss"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvCardRecommended"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:hint="@string/curs_de_gastronomie_cooking_around_the_world"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivCardRecommended" />
+
+        <TextView
+            android:id="@+id/tvDateRecommended"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:hint="11 DEC"
+            android:textColorHint="@color/top10inputs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCardRecommended" />
+
+        <ImageView
+            android:id="@+id/ivDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dot"
+            android:layout_marginStart="8dp"
+            app:layout_constraintLeft_toRightOf="@id/tvDateRecommended"
+            app:layout_constraintTop_toTopOf="@id/tvDateRecommended"
+            app:layout_constraintBottom_toBottomOf="@id/tvDateRecommended"
+            />
+
+        <TextView
+            android:id="@+id/tvTimeRecommended"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginStart="12dp"
+            android:hint="09:00"
+            android:textColorHint="@color/top10inputs"
+            app:layout_constraintStart_toEndOf="@id/ivDot"
+            app:layout_constraintTop_toTopOf="@id/tvDateRecommended"
+            app:layout_constraintBottom_toBottomOf="@id/tvDateRecommended"/>
+
+        <ImageView
+            android:id="@+id/ivDot2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dot"
+            android:layout_marginStart="8dp"
+            app:layout_constraintLeft_toRightOf="@id/tvTimeRecommended"
+            app:layout_constraintTop_toTopOf="@id/tvDateRecommended"
+            app:layout_constraintBottom_toBottomOf="@id/tvDateRecommended"
+            />
+
+        <TextView
+            android:id="@+id/tvLocationRecommended"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginStart="12dp"
+            android:hint="Institutul Culinar Escoffier"
+            android:textColorHint="@color/top10inputs"
+            app:layout_constraintStart_toEndOf="@id/ivDot2"
+            app:layout_constraintTop_toTopOf="@id/tvDateRecommended"
+            app:layout_constraintBottom_toBottomOf="@id/tvDateRecommended"/>
+
+        <ImageView
+            android:id="@+id/ivParticipants"
+            android:layout_width="72dp"
+            android:layout_height="24dp"
+            android:src="@drawable/eventhubss"
+            app:layout_constraintLeft_toLeftOf="@id/tvDateRecommended"
+            app:layout_constraintTop_toTopOf="@id/tvParticipants"/>
+
+        <TextView
+            android:id="@+id/tvParticipants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_2_5k_participanti"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvDateRecommended"
+            app:layout_constraintLeft_toRightOf="@id/ivParticipants"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
