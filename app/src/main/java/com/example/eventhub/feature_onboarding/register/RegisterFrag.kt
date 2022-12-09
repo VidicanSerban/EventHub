@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
@@ -31,15 +30,14 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
         super.onViewCreated(view, savedInstanceState)
         loginBtn = view.findViewById(R.id.tvRegisterClicky)
         registerBtn = view.findViewById(R.id.btnRegister)
-        textName = view.findViewById(R.id.tiedName)
-        textEmail = view.findViewById(R.id.tiedEmail)
-        textPassword = view.findViewById(R.id.tiedPassword)
-        textConfirm = view.findViewById(R.id.tiedConfirm)
+        textName = view.findViewById(R.id.tietName)
+        textEmail = view.findViewById(R.id.tietEmail)
+        textPassword = view.findViewById(R.id.tietPassword)
+        textConfirm = view.findViewById(R.id.tietConfirm)
         errorName = view.findViewById(R.id.tilName)
         errorEmail = view.findViewById(R.id.tilEmail)
         errorPassword = view.findViewById(R.id.tilPassword)
         errorConfirm = view.findViewById(R.id.tilPasswordConfirm)
-
 
         initListeners()
         initViewModel()
@@ -118,9 +116,7 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
                                             val intent = Intent (getActivity(), HomePage::class.java)
                                             getActivity()?.startActivity(intent)
                                         //}
-
         }
-
     }
     private fun initViewModel() {
         val viewModelFactory: RegisterViewModel.RegisterViewModelFactory =

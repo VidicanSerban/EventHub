@@ -45,12 +45,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tvAuthentication">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
             android:hint="@string/email_address"
             android:paddingStart="10sp" />
-
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +77,7 @@
         app:layout_constraintTop_toBottomOf="@id/tilEmail">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietPassLogin"
             android:layout_width="match_parent"
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
@@ -135,6 +136,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvLogin" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

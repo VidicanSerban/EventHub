@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
-            <Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tbCreateevent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
-            </Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
             <ImageView
                 android:id="@+id/ivCoperta"
@@ -209,7 +209,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginStart="24dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDescription"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

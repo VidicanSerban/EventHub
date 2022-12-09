@@ -176,7 +176,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvTopTen"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@drawable/top10"
                 app:layout_constraintTop_toBottomOf="@id/tvTop10"
@@ -195,7 +195,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPopular"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@drawable/popular"
                 app:layout_constraintTop_toBottomOf="@id/tvPopular"
@@ -215,12 +215,30 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvNearYou"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@drawable/near_you"
                 app:layout_constraintTop_toBottomOf="@id/tvNearYou"
                 app:layout_constraintStart_toStartOf="@id/tvNearYou"
                 />
+
+            <TextView
+                android:id="@+id/tvRecommended"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/eveniment_recomandat"
+                app:layout_constraintTop_toBottomOf="@id/rvNearYou"
+                app:layout_constraintStart_toStartOf="@id/rvNearYou"
+                android:layout_marginTop="43sp"
+                />
+
+            <include layout="@layout/item_list_event_recommended"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="24dp"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clCreateEvent"
