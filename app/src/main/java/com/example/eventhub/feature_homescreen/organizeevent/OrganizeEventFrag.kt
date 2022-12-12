@@ -1,17 +1,15 @@
 package com.example.eventhub.feature_homescreen.organizeevent
 
-import android.app.DatePickerDialog
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
-import java.util.Calendar
 
 class OrganizeEventFrag : Fragment(R.layout.fragment_organize_event) {
 

@@ -2,9 +2,6 @@ package com.example.eventhub.feature_spashscreen.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.view.WindowManager
 import com.example.eventhub.R
 import com.example.eventhub.commons.BaseActivity
 import com.example.eventhub.feature_onboarding.activity.OnboardingActivity
