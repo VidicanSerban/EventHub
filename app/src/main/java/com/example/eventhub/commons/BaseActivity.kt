@@ -1,7 +1,7 @@
 package com.example.eventhub.commons
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 
-class BaseActivity: Activity() {
+abstract class BaseActivity: AppCompatActivity() {
 
 }

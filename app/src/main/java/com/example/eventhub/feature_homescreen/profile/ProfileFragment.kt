@@ -1,8 +1,8 @@
 package com.example.eventhub.feature_homescreen.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
 import com.example.eventhub.R
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {

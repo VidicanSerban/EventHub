@@ -17,7 +17,8 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
-            <Toolbar
+            <androidx.appcompat.widget.Toolbar
+
                 android:id="@+id/tbCreateevent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
-            </Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
             <ImageView
                 android:id="@+id/ivCoperta"
@@ -109,11 +110,7 @@
                     android:hint="@string/data_evenimentului"
                     android:layout_marginStart="16dp"
                     android:background="@android:color/transparent"
-
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
+                    android:inputType="date"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -147,6 +144,7 @@
                     android:hint="@string/ora_eveniment"
                     android:layout_marginStart="16dp"
                     android:background="@android:color/transparent"
+                    android:inputType="time"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -202,20 +200,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:background="@drawable/text_input_background"
-                app:layout_constraintTop_toBottomOf="@id/tilLocation"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp">
+                android:layout_marginStart="24dp"
+                app:layout_constraintTop_toBottomOf="@id/tilLocation"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDescription"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="50dp"
                     android:hint="@string/descrie_eveniment"
+                    android:gravity="top"
+                    android:minLines="2"
                     android:ems="10"
                     android:inputType="textMultiLine"
                     android:background="@android:color/transparent"/>

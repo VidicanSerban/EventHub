@@ -2,15 +2,31 @@ package com.example.eventhub.feature_onboarding.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.eventhub.feature_onboarding.data.UserRepositoryImpl
+import com.example.eventhub.commons.BaseViewModel
 
-class LoginViewModel(userRepositoryImplementation: UserRepositoryImpl): ViewModel() {
+class LoginViewModel(): BaseViewModel() {
+
+    fun emptyEmail(email: String): Boolean{
+
+        if(email.isEmpty())
+        {
+            return false
+        }
+        return true
+    }
+
+    fun emptyPass(pass: String): Boolean{
+        if(pass.isEmpty())
+        {
+            return false
+        }
+        return true
+    }
 
     class LoginViewModelFactory(
-    private val userRepositoryImplementation: UserRepositoryImpl
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return LoginViewModel(userRepositoryImplementation) as T
+            return LoginViewModel() as T
         }
     }
 }
