@@ -4,12 +4,13 @@ import android.util.Patterns.EMAIL_ADDRESS
 import androidx.constraintlayout.motion.utils.ViewState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.eventhub.commons.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import java.util.regex.Pattern
 
 
-class RegisterViewModel(): ViewModel() {
+class RegisterViewModel(): BaseViewModel() {
 
     private val _viewState = MutableStateFlow(ViewState())
     val viewState = _viewState.asStateFlow()

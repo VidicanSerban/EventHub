@@ -162,7 +162,12 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <TextView
                 android:id="@+id/tvTop10"
                 android:layout_width="wrap_content"
@@ -170,6 +175,7 @@
                 android:layout_marginTop="40dp"
                 android:text="@string/top_10_evenimente_in_aceasta_saptamana"
                 android:textSize="18sp"
+                android:layout_marginStart="24dp"
                 app:layout_constraintTop_toTopOf="@id/svHome"
                 app:layout_constraintStart_toStartOf="@id/svHome"/>
 
@@ -178,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/top10"
+                android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/tvTop10"
                 app:layout_constraintStart_toStartOf="@id/tvTop10"/>
 
@@ -189,6 +195,7 @@
                 android:text="@string/evenimente_populare"
                 android:textSize="18sp"
                 android:layout_marginTop="40dp"
+                android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/rvTopTen"
                 app:layout_constraintStart_toStartOf="@id/svHome"/>
 
@@ -197,7 +204,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/popular"
+                android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/tvPopular"
                 app:layout_constraintStart_toStartOf="@id/rvTopTen"/>
 
@@ -207,6 +214,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:text="@string/evenimente_aproape_de_tine"
+                android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/rvPopular"
                 app:layout_constraintStart_toStartOf="@id/rvPopular"
                 android:layout_marginTop="43sp"
@@ -217,7 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/near_you"
+                android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/tvNearYou"
                 app:layout_constraintStart_toStartOf="@id/tvNearYou"
                 />
@@ -228,9 +236,10 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:text="@string/eveniment_recomandat"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="43sp"
                 app:layout_constraintTop_toBottomOf="@id/rvNearYou"
                 app:layout_constraintStart_toStartOf="@id/rvNearYou"
-                android:layout_marginTop="43sp"
                 />
 
             <include layout="@layout/item_list_event_recommended"

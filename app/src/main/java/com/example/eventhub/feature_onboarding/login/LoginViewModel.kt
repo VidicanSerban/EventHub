@@ -2,10 +2,11 @@ package com.example.eventhub.feature_onboarding.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.eventhub.commons.BaseViewModel
 import com.example.eventhub.feature_onboarding.data.UserRepositoryImpl
 import java.util.regex.Pattern
 
-class LoginViewModel(): ViewModel() {
+class LoginViewModel(): BaseViewModel() {
 
     fun emptyEmail(email: String): Boolean{
 
