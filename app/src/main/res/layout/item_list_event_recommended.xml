@@ -6,7 +6,6 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="366dp"
         android:layout_height="379dp"
         android:background="@drawable/recommended"
@@ -51,6 +50,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
             android:hint="27 OCT"
+
             android:textColorHint="@color/top10inputs"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCardRecommended" />
@@ -119,3 +119,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+

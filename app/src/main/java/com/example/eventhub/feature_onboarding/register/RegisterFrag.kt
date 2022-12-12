@@ -120,6 +120,7 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
                                             viewModel.registerUser(textEmail.text.toString(), textPassword.text.toString(), textName.text.toString())
 //                                            val intent = Intent (getActivity(), HomePage::class.java)
 //                                            getActivity()?.startActivity(intent)
+
                                         //}
         }
     }

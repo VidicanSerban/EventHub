@@ -3,6 +3,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
         android:layout_width="320dp"
         android:layout_height="279dp"
         android:background="@drawable/top10"
@@ -13,6 +14,7 @@
 
         <ImageView
             android:id="@+id/ivCardPopular"
+
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginTop="8dp"
@@ -27,15 +29,18 @@
 
         <TextView
             android:id="@+id/tvCardPopular"
+
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
+
             android:textColorHint="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@id/ivCardPopular" />
 
         <TextView
@@ -96,6 +101,7 @@
             android:layout_height="24dp"
             android:src="@drawable/eventhubss"
             app:layout_constraintLeft_toLeftOf="@id/tvDatePopular"
+
             app:layout_constraintTop_toTopOf="@id/tvParticipants"/>
         
         <TextView
@@ -109,3 +115,4 @@
             app:layout_constraintLeft_toRightOf="@id/ivParticipants"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
