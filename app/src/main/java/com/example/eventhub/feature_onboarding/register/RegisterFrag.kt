@@ -10,10 +10,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
 import com.example.eventhub.feature_homescreen.activity.HomePage
+import com.example.eventhub.utils.AppContainer
+import com.example.eventhub.utils.UserApplication
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class RegisterFrag : Fragment(R.layout.fragment_register) {
+    private lateinit var appContainer: AppContainer
     private lateinit var loginBtn: TextView
     lateinit var registerBtn: Button
     lateinit var viewModel: RegisterViewModel
@@ -28,6 +31,7 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        appContainer = (requireActivity().application as UserApplication).myContainer
         loginBtn = view.findViewById(R.id.tvRegisterClicky)
         registerBtn = view.findViewById(R.id.btnRegister)
         textName = view.findViewById(R.id.tietName)
@@ -113,14 +117,15 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
 //                                            errorConfirm.error = null
 //                                            errorConfirm.isErrorEnabled = false
 //                                            textConfirm.clearFocus()
-                                            val intent = Intent (getActivity(), HomePage::class.java)
-                                            getActivity()?.startActivity(intent)
+                                            viewModel.registerUser(textEmail.text.toString(), textPassword.text.toString(), textName.text.toString())
+//                                            val intent = Intent (getActivity(), HomePage::class.java)
+//                                            getActivity()?.startActivity(intent)
                                         //}
         }
     }
     private fun initViewModel() {
         val viewModelFactory: RegisterViewModel.RegisterViewModelFactory =
-            RegisterViewModel.RegisterViewModelFactory()
+            RegisterViewModel.RegisterViewModelFactory(appContainer.userRepo)
         viewModel = ViewModelProvider(this, viewModelFactory)[RegisterViewModel::class.java]
     }
 }

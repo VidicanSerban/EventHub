@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
-abstract class UserRepositoryImpl @Inject constructor
+class UserRepositoryImpl
     (private val fireAuth: FirebaseAuth,
      private val firestoreDB: FirebaseFirestore) : UserRepository {
 
@@ -25,13 +25,25 @@ abstract class UserRepositoryImpl @Inject constructor
         awaitClose{subscription.remove()}
     }
 
-    override suspend fun addUserToFirestore(email: String, password: String): Flow<Response<User?>> = callbackFlow{
+    override suspend fun addUserToFirestore(email: String, password: String, name: String): Flow<Response<Boolean>> = callbackFlow{
         fireAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener{
             Log.d("RegisterUser", "Created user successfully")
+            val user = hashMapOf(
+                "email" to email,
+                "password" to password,
+                "name" to name
+            )
+            firestoreDB.collection("users")
+                .add(user)
+                .addOnSuccessListener { trySend(Response.Success(true)) }
+                .addOnFailureListener {
+                    Log.d("LoginUser", "Failed to add user to firestore")
+                    trySend(Response.Error(it.toString())) }
 
         }.addOnFailureListener{
             Log.d("RegisterUSer", "Failed to create user")
             trySend(Response.Error(it.toString()))
         }
+        awaitClose{channel.close()}
     }
 }

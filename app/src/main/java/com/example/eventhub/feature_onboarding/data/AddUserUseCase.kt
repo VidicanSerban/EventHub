@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 class AddUserUseCase constructor(
     private val repository: UserRepositoryImpl
 ) {
-    suspend fun registerUser(email: String, password: String): Flow<Response<User?>> {
-        return repository.addUserToFirestore(email, password)
+    suspend fun execute(email: String, password: String, name: String): Flow<Response<Boolean>> {
+        return repository.addUserToFirestore(email, password, name)
     }
 }
