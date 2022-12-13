@@ -56,6 +56,5 @@ class RegisterViewModel(
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return RegisterViewModel(userRepositoryImpl) as T
             }
-
     }
 }

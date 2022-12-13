@@ -4,4 +4,6 @@ import android.content.Context
 
 class EventRepository(context: Context) {
     var db: EventDao = EventDatabase.getInstance(context)?.eventDao()!!
+
+
 }

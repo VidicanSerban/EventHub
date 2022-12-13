@@ -7,9 +7,7 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
-class UserRepositoryImpl
-    () : UserDao {
-
+class UserRepositoryImpl() : UserDao {
     //    override suspend fun getUserFromFirestore(id: String): Flow<Response<User?>> = callbackFlow{
 //        val document = firestoreDB.collection("users")
 //            .document(id)
@@ -45,7 +43,15 @@ class UserRepositoryImpl
 //        }
 //        awaitClose{channel.close()}
 //    }
-    override fun insertUser(user: User) {
+    override suspend fun addUserToFirestore(
+        email: String,
+        password: String,
+        name: String
+    ): Flow<Response<Boolean>> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getUserFromFirestore(id: String): Flow<Response<User?>> {
         TODO("Not yet implemented")
     }
 }
