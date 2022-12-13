@@ -25,19 +25,21 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private var adaptertop10: RecyclerView.Adapter<RecyclerAdapterTop10.ViewHolder>? = null
     private lateinit var top10: RecyclerView
 
+    private var layoutManagerPopular: RecyclerView.LayoutManager? = null
     private var adapterpopular: RecyclerView.Adapter<RecyclerAdapterPopular.ViewHolder>? = null
     private lateinit var popular: RecyclerView
-    private var layoutManagerPopular: RecyclerView.LayoutManager? = null
 
+    private var layoutManagerNearYou: RecyclerView.LayoutManager? = null
     private var adapternearyou: RecyclerView.Adapter<RecyclerAdapterPopular.ViewHolder>? = null
     private lateinit var nearyou: RecyclerView
-    private var layoutManagerNearYou: RecyclerView.LayoutManager? = null
 
     @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         eventCreate = view.findViewById(R.id.ibEventCreate)
         dateText = view.findViewById(R.id.tvDate)
+
         layoutManagerTop10 = LinearLayoutManager(this.requireActivity())
         top10 = view.findViewById(R.id.rvTopTen)
 
@@ -84,5 +86,4 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             HomeFragmentViewModel.HomeFragmentViewModelFactory()
         viewModel = ViewModelProvider(this, viewModelFactory)[HomeFragmentViewModel::class.java]
     }
-
 }

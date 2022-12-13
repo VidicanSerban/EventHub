@@ -6,7 +6,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import javax.inject.Inject
 
 class UserRepositoryImpl
     (private val fireAuth: FirebaseAuth,
@@ -33,6 +32,7 @@ class UserRepositoryImpl
                 "password" to password,
                 "name" to name
             )
+
             firestoreDB.collection("users")
                 .add(user)
                 .addOnSuccessListener { trySend(Response.Success(true)) }

@@ -1,74 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="175dp"
-        android:layout_height="189dp"
-        android:background="@drawable/top10"
-        app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="175dp"
+    android:layout_height="189dp"
+    android:background="@drawable/top10"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/ivCardTop10"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/radius_cards"
+        android:src="@drawable/eventhubss"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvCardTop10"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/ivCardTop10"/>
 
-        <ImageView
-            android:id="@+id/ivCardTop10"
-            android:layout_width="match_parent"
-            android:layout_height="109dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/radius_cards"
-            android:src="@drawable/eventhubss"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+    <TextView
+        android:id="@+id/tvDateTop10"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:textColorHint="@color/top10inputs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCardTop10"/>
 
-        <TextView
-            android:id="@+id/tvCardTop10"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="12dp"
-            android:textColorHint="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivCardTop10" />
+    <ImageView
+        android:id="@+id/ivDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dot"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@id/tvDateTop10"
+        app:layout_constraintTop_toTopOf="@id/tvDateTop10"
+        app:layout_constraintBottom_toBottomOf="@id/tvDateTop10"/>
 
-        <TextView
-            android:id="@+id/tvDateTop10"
-
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="4dp"
-            android:textColorHint="@color/top10inputs"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvCardTop10" />
-
-        <ImageView
-            android:id="@+id/ivDot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dot"
-            android:layout_marginStart="8dp"
-            app:layout_constraintLeft_toRightOf="@id/tvDateTop10"
-            app:layout_constraintTop_toTopOf="@id/tvDateTop10"
-            app:layout_constraintBottom_toBottomOf="@id/tvDateTop10"
-            />
-
-        <TextView
-            android:id="@+id/tvTimeTop10"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginStart="12dp"
-            android:textColorHint="@color/top10inputs"
-            app:layout_constraintStart_toEndOf="@id/ivDot"
-            app:layout_constraintTop_toTopOf="@id/tvDateTop10"
-            app:layout_constraintBottom_toBottomOf="@id/tvDateTop10"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvTimeTop10"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="12dp"
+        android:textColorHint="@color/top10inputs"
+        app:layout_constraintStart_toEndOf="@id/ivDot"
+        app:layout_constraintTop_toTopOf="@id/tvDateTop10"
+        app:layout_constraintBottom_toBottomOf="@id/tvDateTop10"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

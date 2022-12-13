@@ -1,118 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="320dp"
+    android:layout_height="279dp"
+    android:background="@drawable/top10"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-        android:layout_width="320dp"
-        android:layout_height="279dp"
-        android:background="@drawable/top10"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/ivCardPopular"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/radius_cards"
+        android:src="@drawable/eventhubss"
+        android:contentDescription="@string/eventhub"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvCardPopular"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/ivCardPopular"/>
 
-        <ImageView
-            android:id="@+id/ivCardPopular"
+    <TextView
+        android:id="@+id/tvDatePopular"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:textColorHint="@color/top10inputs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCardPopular"/>
 
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/radius_cards"
-            android:src="@drawable/eventhubss"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+    <ImageView
+        android:id="@+id/ivDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dot"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/eventhub"
+        app:layout_constraintLeft_toRightOf="@id/tvDatePopular"
+        app:layout_constraintTop_toTopOf="@id/tvDatePopular"
+        app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"/>
 
-        <TextView
-            android:id="@+id/tvCardPopular"
+    <TextView
+        android:id="@+id/tvTimePopular"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="12dp"
+        android:textColorHint="@color/top10inputs"
+        app:layout_constraintStart_toEndOf="@id/ivDot"
+        app:layout_constraintTop_toTopOf="@id/tvDatePopular"
+        app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"/>
 
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="12dp"
+    <ImageView
+        android:id="@+id/ivDot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dot"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/eventhub"
+        app:layout_constraintLeft_toRightOf="@id/tvTimePopular"
+        app:layout_constraintTop_toTopOf="@id/tvDatePopular"
+        app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"/>
 
-            android:textColorHint="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+    <TextView
+        android:id="@+id/tvLocationPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="12dp"
+        android:textColorHint="@color/top10inputs"
+        app:layout_constraintStart_toEndOf="@id/ivDot2"
+        app:layout_constraintTop_toTopOf="@id/tvDatePopular"
+        app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"/>
 
-            app:layout_constraintTop_toBottomOf="@id/ivCardPopular" />
-
-        <TextView
-            android:id="@+id/tvDatePopular"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="4dp"
-            android:textColorHint="@color/top10inputs"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvCardPopular" />
-
-        <ImageView
-            android:id="@+id/ivDot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dot"
-            android:layout_marginStart="8dp"
-            app:layout_constraintLeft_toRightOf="@id/tvDatePopular"
-            app:layout_constraintTop_toTopOf="@id/tvDatePopular"
-            app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"
-            />
-
-        <TextView
-            android:id="@+id/tvTimePopular"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginStart="12dp"
-            android:textColorHint="@color/top10inputs"
-            app:layout_constraintStart_toEndOf="@id/ivDot"
-            app:layout_constraintTop_toTopOf="@id/tvDatePopular"
-            app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"/>
-
-        <ImageView
-            android:id="@+id/ivDot2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dot"
-            android:layout_marginStart="8dp"
-            app:layout_constraintLeft_toRightOf="@id/tvTimePopular"
-            app:layout_constraintTop_toTopOf="@id/tvDatePopular"
-            app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"
-            />
-
-        <TextView
-            android:id="@+id/tvLocationPopular"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginStart="12dp"
-            android:textColorHint="@color/top10inputs"
-            app:layout_constraintStart_toEndOf="@id/ivDot2"
-            app:layout_constraintTop_toTopOf="@id/tvDatePopular"
-            app:layout_constraintBottom_toBottomOf="@id/tvDatePopular"/>
-
-        <ImageView
-            android:id="@+id/ivParticipants"
-            android:layout_width="72dp"
-            android:layout_height="24dp"
-            android:src="@drawable/eventhubss"
-            app:layout_constraintLeft_toLeftOf="@id/tvDatePopular"
-
-            app:layout_constraintTop_toTopOf="@id/tvParticipants"/>
+    <ImageView
+        android:id="@+id/ivParticipants"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:src="@drawable/eventhubss"
+        android:contentDescription="@string/eventhub"
+        app:layout_constraintLeft_toLeftOf="@id/tvDatePopular"
+        app:layout_constraintTop_toTopOf="@id/tvParticipants"/>
         
-        <TextView
-            android:id="@+id/tvParticipants"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_2_5k_participanti"
-            android:layout_marginTop="12dp"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintTop_toBottomOf="@id/tvDatePopular"
-            app:layout_constraintLeft_toRightOf="@id/ivParticipants"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvParticipants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_2_5k_participanti"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDatePopular"
+        app:layout_constraintLeft_toRightOf="@id/ivParticipants"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

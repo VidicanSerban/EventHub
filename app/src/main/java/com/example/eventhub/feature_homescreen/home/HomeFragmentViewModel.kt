@@ -10,6 +10,5 @@ class HomeFragmentViewModel : BaseViewModel() {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return HomeFragmentViewModel() as T
         }
-
     }
 }

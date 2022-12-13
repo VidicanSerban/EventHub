@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.eventhub.feature_onboarding.activity.OnboardingActivity">
 
-
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
@@ -15,6 +13,4 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
-import java.util.Calendar
 
 class OrganizeEventFrag : Fragment(R.layout.fragment_organize_event) {
 
@@ -21,6 +20,7 @@ class OrganizeEventFrag : Fragment(R.layout.fragment_organize_event) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         backButton = view.findViewById(R.id.ibBack)
         createButton = view.findViewById(R.id.btnCreate)
         dateText = view.findViewById(R.id.etDate)
@@ -36,32 +36,12 @@ class OrganizeEventFrag : Fragment(R.layout.fragment_organize_event) {
         }
 
         createButton.setOnClickListener{
-            Toast.makeText(context, "Ati create un eveniment", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Ati creat un eveniment", Toast.LENGTH_LONG).show()
         }
-
-//        dateText.setOnClickListener {
-//            val calendar: Calendar = Calendar.getInstance()
-//            val year = calendar.get(Calendar.YEAR)
-//            val month = calendar.get(Calendar.MONTH)
-//            val day = calendar.get(Calendar.DAY_OF_MONTH)
-//
-//            val datePickerDialog = DatePickerDialog(this.requireContext(),
-//                {
-//                view; year; month; day ->
-//                    val dat = (day + "/" + (month + 1) + "/" + year)
-//                    dateText.setText(dat)
-//            },
-//            year,
-//            month,
-//            day)
-//            datePickerDialog.show()
-//
-//        }
     }
     private fun initViewModel() {
         val viewModelFactory: OrganizeEventViewModel.OrganizeEventViewModelFactory =
             OrganizeEventViewModel.OrganizeEventViewModelFactory()
         viewModel = ViewModelProvider(this, viewModelFactory)[OrganizeEventViewModel::class.java]
     }
-
 }

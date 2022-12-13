@@ -14,11 +14,13 @@ class HomePage : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
-        var bottomNav: BottomNavigationView = findViewById(bottom_nav_view)
 
+        var bottomNav: BottomNavigationView = findViewById(bottom_nav_view)
         val navController = this.findNavController(R.id.nav_graph_second)
         val bottomNavigationView: BottomNavigationView = findViewById(bottom_nav_view)
+
         bottomNavigationView.setupWithNavController(navController)
+
         navController.addOnDestinationChangedListener{
             _, destination, _ -> if(destination.id == R.id.organizeEventFrag){
             bottomNav.visibility = View.GONE
@@ -27,9 +29,5 @@ class HomePage : BaseActivity() {
                 bottomNav.visibility = View.VISIBLE
             }
         }
-
     }
-
-
-
 }
