@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.05"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilName"
@@ -39,8 +39,7 @@
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
             android:hint="@string/nume_si_prenume"
-            android:paddingStart="10sp" />
-
+            android:paddingStart="10sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -51,7 +50,7 @@
         android:src="@drawable/user"
         app:layout_constraintBottom_toBottomOf="@+id/tilName"
         app:layout_constraintEnd_toEndOf="@+id/tilName"
-        app:layout_constraintTop_toTopOf="@+id/tilName" />
+        app:layout_constraintTop_toTopOf="@+id/tilName"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
@@ -71,8 +70,7 @@
             android:layout_height="64sp"
             android:background="@drawable/text_input_background"
             android:hint="@string/email_address"
-            android:paddingStart="10sp" />
-
+            android:paddingStart="10sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -104,8 +102,7 @@
             android:background="@drawable/text_input_background"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:paddingStart="10sp" />
-
+            android:paddingStart="10sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -116,7 +113,7 @@
         android:src="@drawable/password"
         app:layout_constraintBottom_toBottomOf="@+id/tilPassword"
         app:layout_constraintEnd_toEndOf="@+id/tilPassword"
-        app:layout_constraintTop_toTopOf="@+id/tilPassword" />
+        app:layout_constraintTop_toTopOf="@+id/tilPassword"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPasswordConfirm"
@@ -137,8 +134,7 @@
             android:background="@drawable/text_input_background"
             android:hint="@string/confirma_parola"
             android:inputType="textPassword"
-            android:paddingStart="10sp" />
-
+            android:paddingStart="10sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -149,7 +145,7 @@
         android:src="@drawable/password"
         app:layout_constraintBottom_toBottomOf="@+id/tilPasswordConfirm"
         app:layout_constraintEnd_toEndOf="@+id/tilPasswordConfirm"
-        app:layout_constraintTop_toTopOf="@+id/tilPasswordConfirm" />
+        app:layout_constraintTop_toTopOf="@+id/tilPasswordConfirm"/>
 
     <Button
         android:id="@+id/btnRegister"
@@ -164,20 +160,18 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilPasswordConfirm" />
+        app:layout_constraintTop_toBottomOf="@id/tilPasswordConfirm"/>
 
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="43dp"
-
-
         android:text="@string/ai_deja_cont"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvRegisterClicky"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/tvRegisterClicky"
@@ -190,6 +184,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvRegister" />
-
+        app:layout_constraintStart_toEndOf="@+id/tvRegister"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

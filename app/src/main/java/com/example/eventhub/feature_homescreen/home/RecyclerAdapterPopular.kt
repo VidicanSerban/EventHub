@@ -45,7 +45,6 @@ class RecyclerAdapterPopular: RecyclerView.Adapter<RecyclerAdapterPopular.ViewHo
             itemDate = itemView.findViewById(R.id.tvDatePopular)
             itemTime = itemView.findViewById(R.id.tvTimePopular)
             itemLocation = itemView.findViewById(R.id.tvLocationPopular)
-
         }
     }
 }

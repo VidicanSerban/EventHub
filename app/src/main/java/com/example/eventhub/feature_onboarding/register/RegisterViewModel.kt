@@ -2,16 +2,12 @@ package com.example.eventhub.feature_onboarding.register
 
 import android.util.Log
 import android.util.Patterns.EMAIL_ADDRESS
-import androidx.constraintlayout.motion.utils.ViewState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.eventhub.commons.BaseViewModel
-import com.example.eventhub.feature_onboarding.data.AddUserUseCase
+import com.example.eventhub.feature_onboarding.data.RegisterUserUseCase
 import com.example.eventhub.feature_onboarding.data.UserRepositoryImpl
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.util.regex.Pattern
 
@@ -19,11 +15,7 @@ import java.util.regex.Pattern
 class RegisterViewModel(
     private val userRepositoryImpl: UserRepositoryImpl
 ): BaseViewModel() {
-
-
-    private val _viewState = MutableStateFlow(ViewState())
-    val viewState = _viewState.asStateFlow()
-    private var registerUserUseCase: AddUserUseCase = AddUserUseCase(userRepositoryImpl)
+    private var registerUserUseCase: RegisterUserUseCase = RegisterUserUseCase(userRepositoryImpl)
 
     fun registerUser(email: String, password: String, name: String){
         viewModelScope.launch {

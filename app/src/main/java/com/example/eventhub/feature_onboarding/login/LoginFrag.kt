@@ -24,12 +24,13 @@ class LoginFrag : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        btnLogin = view.findViewById(R.id.btnLogin)
         registerBtn = view.findViewById(R.id.tvLoginClicky)
         textEmail = view.findViewById(R.id.tietEmailLogin)
         textPassword = view.findViewById(R.id.tietPassLogin)
-        btnLogin = view.findViewById(R.id.btnLogin)
-        errorPassword = view.findViewById(R.id.tilPassword)
         errorEmail = view.findViewById(R.id.tilEmail)
+        errorPassword = view.findViewById(R.id.tilPassword)
 
         initListeners()
         initViewModel()

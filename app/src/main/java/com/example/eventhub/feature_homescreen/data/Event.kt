@@ -1,3 +1,3 @@
 package com.example.eventhub.feature_homescreen.data
 
-data class Event(val name: String)
+data class Event(val name: String = "")

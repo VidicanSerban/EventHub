@@ -9,5 +9,4 @@ class UserApplication: Application() {
         super.onCreate()
         myContainer = AppContainer()
     }
-
 }
