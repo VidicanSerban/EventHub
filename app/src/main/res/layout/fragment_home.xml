@@ -74,7 +74,7 @@
                     app:layout_constraintStart_toStartOf="@id/tvDate"
                     app:layout_constraintTop_toBottomOf="@id/tvDate"/>
 
-                <SearchView
+                <androidx.appcompat.widget.SearchView
                     android:id="@+id/svSearch"
                     android:layout_width="278dp"
                     android:layout_height="40dp"
@@ -82,13 +82,13 @@
                     android:layout_marginTop="18dp"
                     android:iconifiedByDefault="false"
                     android:queryHint="@string/cauta_evenimente"
-                    android:searchIcon="@drawable/search"
                     android:background="@drawable/hometopbarinputtext"
                     android:queryBackground="@android:color/transparent"
                     android:submitBackground="@android:color/transparent"
                     android:textColor="@color/searchhint"
                     app:layout_constraintStart_toStartOf="@id/clHomeBar"
-                    app:layout_constraintTop_toBottomOf="@id/tvLocation"/>
+                    app:layout_constraintTop_toBottomOf="@id/tvLocation"
+                    app:searchIcon="@drawable/search"/>
 
                 <ImageView
                     android:id="@+id/ivFilters"
@@ -253,7 +253,6 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:text="@string/nu_ai_gasit_ceva_pe_placul_tau"
-                    android:inputType="textMultiLine"
                     android:textColor="@color/white"
                     android:layout_marginTop="19dp"
                     android:layout_marginStart="20dp"

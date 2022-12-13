@@ -11,5 +11,5 @@ class AppContainer {
 
     val fireauth = FirebaseAuth.getInstance()
 
-    val userRepo = UserRepositoryImpl(fireauth, firebase)
+    val userRepo = UserRepositoryImpl()
 }

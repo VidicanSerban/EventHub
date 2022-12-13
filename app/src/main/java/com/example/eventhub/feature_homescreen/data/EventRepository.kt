@@ -1,4 +1,7 @@
 package com.example.eventhub.feature_homescreen.data
 
-interface EventRepository {
+import android.content.Context
+
+class EventRepository(context: Context) {
+    var db: EventDao = EventDatabase.getInstance(context)?.eventDao()!!
 }
