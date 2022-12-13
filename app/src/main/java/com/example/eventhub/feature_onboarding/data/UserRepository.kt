@@ -1,10 +1,8 @@
 package com.example.eventhub.feature_onboarding.data
 
-import kotlinx.coroutines.flow.Flow
+import android.content.Context
 
-interface UserRepository {
+class UserRepository(context: Context) {
+    var db: UserDao = UserDatabase.getInstance(context)?.userDao()!!
 
-    suspend fun getUserFromFirestore(id: String): Flow<Response<User?>>
-
-    suspend fun addUserToFirestore(email: String, password: String, name: String): Flow<Response<Boolean>>
 }

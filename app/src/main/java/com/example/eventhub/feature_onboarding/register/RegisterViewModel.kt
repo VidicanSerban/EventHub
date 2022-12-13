@@ -17,14 +17,14 @@ class RegisterViewModel(
 ): BaseViewModel() {
     private var registerUserUseCase: RegisterUserUseCase = RegisterUserUseCase(userRepositoryImpl)
 
-    fun registerUser(email: String, password: String, name: String){
-        viewModelScope.launch {
-            registerUserUseCase.execute(email, password, name)
-                .collect{
-                    Log.d("RegisterViewModel", "Response $it")
-                }
-        }
-    }
+//    fun registerUser(email: String, password: String, name: String){
+//        viewModelScope.launch {
+//            registerUserUseCase.execute(email, password, name)
+//                .collect{
+//                    Log.d("RegisterViewModel", "Response $it")
+//                }
+//        }
+//    }
     fun validateName(name: String): Boolean{
 
         if(name.isEmpty())
