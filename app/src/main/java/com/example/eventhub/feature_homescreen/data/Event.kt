@@ -15,3 +15,4 @@ data class Event(
     @ColumnInfo(name = "location") val location: String = "Oradea, Romania",
     @ColumnInfo(name = "description") val description: String
 )
+

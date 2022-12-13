@@ -25,6 +25,7 @@ class RegisterViewModel(
 //                }
 //        }
 //    }
+
     fun validateName(name: String): Boolean{
 
         if(name.isEmpty())
