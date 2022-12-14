@@ -8,11 +8,11 @@ import java.sql.Time
 
 @Entity(tableName = "events")
 data class Event(
-    @PrimaryKey val uit: Int,
+    @PrimaryKey val uid: Int?,
     @ColumnInfo(name = "name") val name: String?,
-    @ColumnInfo(name = "date") val date: Date?,
-    @ColumnInfo(name = "time") val time: Time,
+    //@ColumnInfo(name = "date") val date: Date?,
+    //@ColumnInfo(name = "time") val time: Time?,
     @ColumnInfo(name = "location") val location: String = "Oradea, Romania",
-    @ColumnInfo(name = "description") val description: String
+    @ColumnInfo(name = "description") val description: String?
 )
 

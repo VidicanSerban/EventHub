@@ -1,8 +1,10 @@
 package com.example.eventhub.feature_onboarding.data
 
-import android.content.Context
+import kotlinx.coroutines.flow.Flow
 
-class UserRepository(context: Context) {
-    var db: UserDao = UserDatabase.createUserDB(context)?.userDao()!!
-    
+interface UserRepository {
+    fun addUserToRoom(user: User)
+
+    suspend fun getUserFromRoom(email: String): Flow<User>
+
 }

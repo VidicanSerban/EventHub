@@ -1,15 +1,17 @@
 package com.example.eventhub.utils
 
+import android.content.Context
+import com.example.eventhub.feature_homescreen.data.EventDatabase
+import com.example.eventhub.feature_homescreen.data.EventRepositoryImpl
+import com.example.eventhub.feature_onboarding.data.UserDatabase
 import com.example.eventhub.feature_onboarding.data.UserRepositoryImpl
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
-class AppContainer {
+class AppContainer(context: Context) {
+    private var userDB: UserDatabase = UserDatabase.getUserDB(context)
 
-    val firebase = Firebase.firestore
+    private var eventDB: EventDatabase = EventDatabase.getEventDB(context)
 
-    val fireauth = FirebaseAuth.getInstance()
+    val userRepo = UserRepositoryImpl(userDB)
 
-    val userRepo = UserRepositoryImpl()
+    //val eventRepo: EventRepositoryImpl(eventDB)
 }

@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.eventhub.commons.BaseViewModel
 import com.example.eventhub.feature_onboarding.data.RegisterUserUseCase
+import com.example.eventhub.feature_onboarding.data.User
 import com.example.eventhub.feature_onboarding.data.UserRepositoryImpl
 import kotlinx.coroutines.launch
 import java.util.regex.Pattern
@@ -17,14 +18,11 @@ class RegisterViewModel(
 ): BaseViewModel() {
     private var registerUserUseCase: RegisterUserUseCase = RegisterUserUseCase(userRepositoryImpl)
 
-//    fun registerUser(email: String, password: String, name: String){
-//        viewModelScope.launch {
-//            registerUserUseCase.execute(email, password, name)
-//                .collect{
-//                    Log.d("RegisterViewModel", "Response $it")
-//                }
-//        }
-//    }
+    fun registerUser(email: String, password: String, name: String){
+        viewModelScope.launch {
+            registerUserUseCase.execute(User(email, password, name))
+        }
+    }
 
     fun validateName(name: String): Boolean{
 
@@ -40,9 +38,9 @@ class RegisterViewModel(
     }
 
     fun validatePassword(pass: String): Boolean{
-        val PASSWORD_PATTERN = Pattern.compile(
+        val passwordpattern = Pattern.compile(
             "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@\$%^&*-]).{8,}\$")
-        return PASSWORD_PATTERN.matcher(pass).matches()
+        return passwordpattern.matcher(pass).matches()
     }
 
     fun samePassword(pass: String, confirmpass: String): Boolean{

@@ -123,6 +123,7 @@
                     android:text="@string/astazi"
                     android:textColor="@color/white"
                     android:textSize="11sp"
+                    android:elevation="5dp"
                     app:layout_constraintBottom_toBottomOf="@id/clHomeBar"
                     app:layout_constraintStart_toStartOf="@id/svSearch"
                     app:layout_constraintTop_toBottomOf="@id/svSearch"/>
@@ -136,6 +137,7 @@
                     android:text="@string/maine"
                     android:textColor="@color/white"
                     android:textSize="11sp"
+                    android:elevation="5dp"
                     app:layout_constraintBottom_toBottomOf="@id/btnToday"
                     app:layout_constraintStart_toEndOf="@id/btnToday"
                     app:layout_constraintTop_toTopOf="@id/btnToday"/>
@@ -152,6 +154,7 @@
                     android:text="@string/saptamana_aceasta"
                     android:textColor="@color/white"
                     android:textSize="11sp"
+                    android:elevation="5dp"
                     app:layout_constraintBottom_toBottomOf="@id/btnToday"
                     app:layout_constraintEnd_toEndOf="@id/clHomeBar"
                     app:layout_constraintStart_toEndOf="@+id/btnTomorrow"
@@ -172,7 +175,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvTopTen"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="199dp"
                 android:orientation="horizontal"
                 android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/tvTop10"
@@ -192,7 +195,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPopular"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="289dp"
                 android:orientation="horizontal"
                 android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/tvPopular"
@@ -212,7 +215,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvNearYou"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="289dp"
                 android:orientation="horizontal"
                 android:layout_marginStart="24dp"
                 app:layout_constraintTop_toBottomOf="@id/tvNearYou"
@@ -230,8 +233,8 @@
                 app:layout_constraintStart_toStartOf="@id/rvNearYou"/>
 
             <include layout="@layout/item_list_event_recommended"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="389dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"/>

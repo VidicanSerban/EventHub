@@ -116,7 +116,7 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
                                             errorConfirm.error = null
                                             errorConfirm.isErrorEnabled = false
                                             textConfirm.clearFocus()
-                                            //viewModel.registerUser(textEmail.text.toString(), textPassword.text.toString(), textName.text.toString())
+                                            viewModel.registerUser(textEmail.text.toString(), textPassword.text.toString(), textName.text.toString())
                                             val intent = Intent (getActivity(), HomePage::class.java)
                                             getActivity()?.startActivity(intent)
                                         }

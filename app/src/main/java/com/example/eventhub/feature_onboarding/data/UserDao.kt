@@ -8,8 +8,8 @@ import kotlinx.coroutines.flow.Flow
 interface UserDao {
 
     @Insert
-    suspend fun addUserToFirestore(email: String, password: String, name: String): Flow<Response<Boolean>>
+    fun registerUser(user: User)
 
-    @Query("SELECT * FROM users")
-    suspend fun getUserFromFirestore(id: String): Flow<Response<User?>>
+    @Query("SELECT * FROM users WHERE email = :email")
+    fun getUser(email: String): Flow<User>
 }

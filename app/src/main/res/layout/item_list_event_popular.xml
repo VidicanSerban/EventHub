@@ -5,6 +5,9 @@
     android:layout_width="320dp"
     android:layout_height="279dp"
     android:background="@drawable/top10"
+    android:elevation="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +100,7 @@
         android:contentDescription="@string/eventhub"
         app:layout_constraintLeft_toLeftOf="@id/tvDatePopular"
         app:layout_constraintTop_toTopOf="@id/tvParticipants"/>
-        
+
     <TextView
         android:id="@+id/tvParticipants"
         android:layout_width="wrap_content"
