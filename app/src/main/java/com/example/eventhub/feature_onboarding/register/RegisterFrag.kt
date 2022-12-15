@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
 import com.example.eventhub.feature_homescreen.activity.HomePage
 import com.example.eventhub.utils.AppContainer
-import com.example.eventhub.utils.UserApplication
+import com.example.eventhub.utils.AppApplication
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -32,7 +32,7 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        appContainer = (requireActivity().application as UserApplication).myContainer
+        appContainer = (requireActivity().application as AppApplication).myContainer
         loginBtn = view.findViewById(R.id.tvRegisterClicky)
         registerBtn = view.findViewById(R.id.btnRegister)
         textName = view.findViewById(R.id.tietName)
@@ -117,8 +117,8 @@ class RegisterFrag : Fragment(R.layout.fragment_register) {
                                             errorConfirm.isErrorEnabled = false
                                             textConfirm.clearFocus()
                                             viewModel.registerUser(textEmail.text.toString(), textPassword.text.toString(), textName.text.toString())
-                                            val intent = Intent (getActivity(), HomePage::class.java)
-                                            getActivity()?.startActivity(intent)
+                                            val intent = Intent (requireActivity(), HomePage::class.java)
+                                            requireActivity().startActivity(intent)
                                         }
         }
     }

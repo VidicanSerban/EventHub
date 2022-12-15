@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface EventRepository {
 
-    fun addEventToRoom(event: Event)
+    suspend fun addEventToRoom(event: Event)
 
-    suspend fun getEventsFromRoom(): Flow<List<Event>>
+    fun getEventsFromRoom(): Flow<List<Event>>
 }

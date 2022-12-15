@@ -13,5 +13,5 @@ class AppContainer(context: Context) {
 
     val userRepo = UserRepositoryImpl(userDB)
 
-    //val eventRepo: EventRepositoryImpl(eventDB)
+    val eventRepo = EventRepositoryImpl(eventDB)
 }

@@ -6,18 +6,25 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventhub.R
+import com.example.eventhub.utils.AppApplication
+import com.example.eventhub.utils.AppContainer
+import kotlinx.coroutines.launch
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
-
+    private lateinit var appContainer: AppContainer
     lateinit var viewModel: HomeFragmentViewModel
+
     lateinit var eventCreate: ImageButton
     lateinit var dateText: TextView
 
@@ -33,9 +40,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private var adapternearyou: RecyclerView.Adapter<RecyclerAdapterPopular.ViewHolder>? = null
     private lateinit var nearyou: RecyclerView
 
+    private var adapterforpopularandnearyou: RecyclerView.Adapter<RecyclerAdapterPopular.ViewHolder>? = null
+
     @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        appContainer = (requireActivity().application as AppApplication).myContainer
 
         eventCreate = view.findViewById(R.id.ibEventCreate)
         dateText = view.findViewById(R.id.tvDate)
@@ -57,6 +67,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         initViewModel()
         initListeners()
         initAdapters()
+        initObservers()
     }
     private fun initListeners()
     {
@@ -73,17 +84,30 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         layoutManagerPopular = LinearLayoutManager(this.requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         popular.layoutManager = layoutManagerPopular
-        adapterpopular = RecyclerAdapterPopular()
+        adapterpopular = adapterforpopularandnearyou
         popular.adapter = adapterpopular
 
         layoutManagerNearYou = LinearLayoutManager(this.requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         nearyou.layoutManager = layoutManagerNearYou
-        adapternearyou = RecyclerAdapterPopular()
+        adapternearyou = adapterforpopularandnearyou
         nearyou.adapter = adapternearyou
     }
+
+    fun initObservers(){
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.viewState.collect {
+                    adapterforpopularandnearyou = it.list?.let { it1 -> RecyclerAdapterPopular(it1) }
+                    popular.adapter = adapterforpopularandnearyou
+                    nearyou.adapter = adapterforpopularandnearyou
+                }
+            }
+        }
+    }
+
     private fun initViewModel() {
         val viewModelFactory: HomeFragmentViewModel.HomeFragmentViewModelFactory =
-            HomeFragmentViewModel.HomeFragmentViewModelFactory()
+            HomeFragmentViewModel.HomeFragmentViewModelFactory(appContainer.eventRepo)
         viewModel = ViewModelProvider(this, viewModelFactory)[HomeFragmentViewModel::class.java]
     }
 }

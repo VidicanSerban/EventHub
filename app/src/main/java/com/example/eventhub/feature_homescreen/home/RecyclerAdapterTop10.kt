@@ -7,14 +7,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventhub.R
 
-class RecyclerAdapterTop10: RecyclerView.Adapter<RecyclerAdapterTop10.ViewHolder>() {
+class RecyclerAdapterTop10(): RecyclerView.Adapter<RecyclerAdapterTop10.ViewHolder>() {
 
     private var title = arrayOf("Vincent Van Gogh: \n" +
-            "O experiență imersivă", "Petrecere costumată de Halloween", "N O S T A L G I A Imaginarium", "Petrecere de Craciun")
+            "O experiență imersivă", "Trivia Quiz Urban Place", "N O S T A L G I A Imaginarium", "Concurs costume - tema Merry Xmas")
 
-    private var eventdate = arrayOf("27 OCT", "31 OCT", "15 NOI", "25 DEC")
+    private var eventdate = arrayOf("15 DEC", "16 DEC", "17 DEC", "18 DEC")
 
-    private var eventtime = arrayOf("17:00", "23:00", "09:00", "19:00")
+    private var eventtime = arrayOf("18:00", "23:00", "09:00", "19:00")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterTop10.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_list_event_top10, parent, false)

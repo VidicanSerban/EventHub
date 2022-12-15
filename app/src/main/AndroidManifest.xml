@@ -4,7 +4,7 @@
     package="com.example.eventhub">
 
     <application
-        android:name=".utils.UserApplication"
+        android:name=".utils.AppApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

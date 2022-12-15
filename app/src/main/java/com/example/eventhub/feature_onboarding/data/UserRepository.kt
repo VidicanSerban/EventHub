@@ -1,10 +1,11 @@
 package com.example.eventhub.feature_onboarding.data
 
 import kotlinx.coroutines.flow.Flow
+import java.net.PasswordAuthentication
 
 interface UserRepository {
-    fun addUserToRoom(user: User)
+    suspend fun addUserToRoom(user: User)
 
-    suspend fun getUserFromRoom(email: String): Flow<User>
+    fun getUserFromRoom(email: String, password: String): Flow<User>
 
 }

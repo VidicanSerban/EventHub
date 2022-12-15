@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.eventhub.feature_onboarding.data.UserDatabase
 
-@Database(entities = [Event::class], version = 2)
+@Database(entities = [Event::class], version = 1)
 abstract class EventDatabase: RoomDatabase() {
 
     abstract fun eventDao(): EventDao

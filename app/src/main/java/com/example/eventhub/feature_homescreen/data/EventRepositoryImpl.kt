@@ -5,11 +5,11 @@ import kotlinx.coroutines.flow.Flow
 class EventRepositoryImpl(
     private var eventDB: EventDatabase
 ): EventRepository {
-    override fun addEventToRoom(event: Event) {
+    override suspend fun addEventToRoom(event: Event) {
         return eventDB.eventDao().insertEvent(event)
     }
 
-    override suspend fun getEventsFromRoom(): Flow<List<Event>> {
+    override fun getEventsFromRoom(): Flow<List<Event>> {
         return eventDB.eventDao().getEvents()
     }
 }

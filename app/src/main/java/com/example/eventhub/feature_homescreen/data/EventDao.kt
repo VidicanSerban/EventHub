@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 interface EventDao {
 
     @Insert
-    fun insertEvent(event: Event)
+    suspend fun insertEvent(event: Event)
 
     @Query("Select * FROM events")
     fun getEvents(): Flow<List<Event>>

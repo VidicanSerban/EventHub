@@ -6,15 +6,23 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.eventhub.R
 import com.example.eventhub.feature_homescreen.activity.HomePage
+import com.example.eventhub.utils.AppContainer
+import com.example.eventhub.utils.AppApplication
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.coroutines.launch
 
 class LoginFrag : Fragment(R.layout.fragment_login) {
+    private lateinit var appContainer: AppContainer
     lateinit var viewModel: LoginViewModel
+
     lateinit var btnLogin: Button
     lateinit var registerBtn: TextView
     lateinit var textEmail: TextInputEditText
@@ -25,6 +33,8 @@ class LoginFrag : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        appContainer = (requireActivity().application as AppApplication).myContainer
+
         btnLogin = view.findViewById(R.id.btnLogin)
         registerBtn = view.findViewById(R.id.tvLoginClicky)
         textEmail = view.findViewById(R.id.tietEmailLogin)
@@ -34,6 +44,7 @@ class LoginFrag : Fragment(R.layout.fragment_login) {
 
         initListeners()
         initViewModel()
+        initObeservers()
     }
 
     private fun initListeners(){
@@ -66,15 +77,28 @@ class LoginFrag : Fragment(R.layout.fragment_login) {
                 errorPassword.error = null
                 errorPassword.isErrorEnabled = false
                 textPassword.clearFocus()
-                val intent = Intent (getActivity(), HomePage::class.java)
-                getActivity()?.startActivity(intent)
+                viewModel.loginUser(textEmail.text.toString(), textPassword.text.toString())
             }
         }
     }
 
+    fun initObeservers(){
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.viewState.collect {
+                    navigateToHome()
+                }
+            }
+        }
+    }
+
+    private fun navigateToHome(){
+        val intent = Intent (requireActivity(), HomePage::class.java)
+        requireActivity().startActivity(intent)
+    }
     private fun initViewModel() {
         val viewModelFactory: LoginViewModel.LoginViewModelFactory =
-            LoginViewModel.LoginViewModelFactory()
+            LoginViewModel.LoginViewModelFactory(appContainer.userRepo)
         viewModel = ViewModelProvider(this, viewModelFactory)[LoginViewModel::class.java]
     }
 }

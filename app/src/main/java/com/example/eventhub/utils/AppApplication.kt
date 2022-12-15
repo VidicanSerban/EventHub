@@ -1,9 +1,8 @@
 package com.example.eventhub.utils
 
 import android.app.Application
-import android.content.Context
 
-class UserApplication: Application() {
+class AppApplication: Application() {
 
     lateinit var myContainer: AppContainer
 

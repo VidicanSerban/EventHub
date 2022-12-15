@@ -1,12 +1,11 @@
 package com.example.eventhub.feature_onboarding.register
 
-import android.util.Log
 import android.util.Patterns.EMAIL_ADDRESS
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.eventhub.commons.BaseViewModel
-import com.example.eventhub.feature_onboarding.data.RegisterUserUseCase
+import com.example.eventhub.feature_onboarding.usecases.RegisterUserUseCase
 import com.example.eventhub.feature_onboarding.data.User
 import com.example.eventhub.feature_onboarding.data.UserRepositoryImpl
 import kotlinx.coroutines.launch
@@ -18,9 +17,9 @@ class RegisterViewModel(
 ): BaseViewModel() {
     private var registerUserUseCase: RegisterUserUseCase = RegisterUserUseCase(userRepositoryImpl)
 
-    fun registerUser(email: String, password: String, name: String){
+    fun registerUser(email: String, name: String, password: String){
         viewModelScope.launch {
-            registerUserUseCase.execute(User(email, password, name))
+            registerUserUseCase.execute(User(email, name, password))
         }
     }
 
@@ -50,7 +49,9 @@ class RegisterViewModel(
         return true
     }
 
-    class RegisterViewModelFactory(private val userRepositoryImpl: UserRepositoryImpl) : ViewModelProvider.Factory {
+    class RegisterViewModelFactory(
+        private val userRepositoryImpl: UserRepositoryImpl
+        ) : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return RegisterViewModel(userRepositoryImpl) as T
             }

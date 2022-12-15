@@ -9,12 +9,11 @@ class UserRepositoryImpl(
     private var userDB: UserDatabase
 ) : UserRepository {
 
-    @WorkerThread
-    override fun addUserToRoom(user: User) {
+    override suspend fun addUserToRoom(user: User) {
         return userDB.userDao().registerUser(user)
     }
 
-    override suspend fun getUserFromRoom(email: String): Flow<User> {
-        return userDB.userDao().getUser(email)
+    override fun getUserFromRoom(email: String, password: String): Flow<User> {
+        return userDB.userDao().getUser(email, password)
     }
 }
